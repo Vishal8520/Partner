@@ -1112,6 +1112,11 @@ if os.path.exists(frontend_dist_path):
         if catchall.startswith("api/") or catchall.startswith("ws/"):
             raise HTTPException(status_code=404, detail="Not Found")
             
+        # Check if the requested file exists directly in frontend_dist_path (e.g. favicon.svg)
+        file_path = os.path.join(frontend_dist_path, catchall)
+        if catchall and os.path.exists(file_path) and os.path.isfile(file_path):
+            return FileResponse(file_path)
+            
         index_file = os.path.join(frontend_dist_path, "index.html")
         if os.path.exists(index_file):
             return FileResponse(index_file)
