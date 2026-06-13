@@ -18,7 +18,7 @@ export default function GSDTool() {
     if (!task.trim()) return;
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:8000/api/engineering/gsd", {
+      const response = await fetch("/api/engineering/gsd", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ task }),

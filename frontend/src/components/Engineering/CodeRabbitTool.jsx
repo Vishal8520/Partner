@@ -19,7 +19,7 @@ export default function CodeRabbitTool() {
     setLoading(true);
     setSuggestions([]);
     try {
-      const response = await fetch("http://localhost:8000/api/engineering/code-review", {
+      const response = await fetch("/api/engineering/code-review", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ code }),

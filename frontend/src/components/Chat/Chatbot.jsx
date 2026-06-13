@@ -62,7 +62,7 @@ const Chatbot = ({ podId }) => {
         setMessages(prev => [...prev, { role: 'assistant', content: '', placeholderId, loading: true }]);
 
         try {
-            const response = await fetch('http://localhost:8000/api/chat/stream', {
+            const response = await fetch('/api/chat/stream', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ message: messageText, chat_history: messages })
@@ -117,7 +117,7 @@ const Chatbot = ({ podId }) => {
 
     const handleFeedback = async (messageId, rating) => {
         try {
-            await fetch('http://localhost:8000/api/chat/feedback', {
+            await fetch('/api/chat/feedback', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ message_id: messageId, rating })
@@ -135,7 +135,7 @@ const Chatbot = ({ podId }) => {
         const formData = new FormData();
         formData.append('file', file);
         try {
-            const response = await fetch('http://localhost:8000/api/chat/upload', { method: 'POST', body: formData });
+            const response = await fetch('/api/chat/upload', { method: 'POST', body: formData });
             if (response.ok) {
                 setUploadedFiles(prev => [...prev, file.name]);
                 setMessages(prev => [...prev, {
@@ -153,7 +153,7 @@ const Chatbot = ({ podId }) => {
     const clearHistory = async () => {
         if (!window.confirm("Clear all AI memory and chat history?")) return;
         try {
-            await fetch('http://localhost:8000/api/chat/clear', { method: 'POST' });
+            await fetch('/api/chat/clear', { method: 'POST' });
             setMessages([]);
             setUploadedFiles([]);
         } catch { alert("Failed to clear database."); }

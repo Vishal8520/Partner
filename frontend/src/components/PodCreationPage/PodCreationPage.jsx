@@ -29,7 +29,7 @@ const PodCreationPage = () => {
     setMessage({ type: '', text: '' });
 
     try {
-      const response = await fetch('http://localhost:8000/api/pods', {
+      const response = await fetch('/api/pods', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

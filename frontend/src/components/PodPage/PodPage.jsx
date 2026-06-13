@@ -31,8 +31,8 @@ const PodPage = () => {
       try {
         // Fetch pod info and syllabus in parallel
         const [podRes, syllabusRes] = await Promise.all([
-          fetch(`http://localhost:8000/api/pods/${id}`),
-          fetch(`http://localhost:8000/api/pods/${id}/syllabus`),
+          fetch(`/api/pods/${id}`),
+          fetch(`/api/pods/${id}/syllabus`),
         ]);
 
         if (!podRes.ok) throw new Error('Pod not found');
@@ -56,7 +56,7 @@ const PodPage = () => {
 
   // Background save — fire and forget
   const handleToggle = useCallback((itemId, completed) => {
-    fetch(`http://localhost:8000/api/pods/${id}/syllabus`, {
+    fetch(`/api/pods/${id}/syllabus`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ id: itemId, completed }),
@@ -66,7 +66,7 @@ const PodPage = () => {
   const handleSaveSyllabus = async (updatedSyllabus) => {
     setIsSavingSyllabus(true);
     try {
-      const response = await fetch(`http://localhost:8000/api/pods/${id}/syllabus`, {
+      const response = await fetch(`/api/pods/${id}/syllabus`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedSyllabus),
@@ -87,7 +87,7 @@ const PodPage = () => {
   const handleSaveAttendance = async (updatedAttendance) => {
     setIsSavingAttendance(true);
     try {
-      const response = await fetch(`http://localhost:8000/api/pods/${id}/attendance`, {
+      const response = await fetch(`/api/pods/${id}/attendance`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedAttendance),

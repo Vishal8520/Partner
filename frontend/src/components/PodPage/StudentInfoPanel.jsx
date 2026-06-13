@@ -24,7 +24,7 @@ const StudentInfoPanel = ({ podId, onSave, isSaving }) => {
   useEffect(() => {
     const fetchAttendance = async () => {
       try {
-        const res = await fetch(`http://localhost:8000/api/pods/${podId}/attendance`);
+        const res = await fetch(`/api/pods/${podId}/attendance`);
         if (res.ok) {
           const json = await res.json();
           setData(json);
@@ -61,7 +61,7 @@ const StudentInfoPanel = ({ podId, onSave, isSaving }) => {
     setSubmitSuccess('');
     setSubmitError('');
     try {
-      const res = await fetch(`http://localhost:8000/api/pods/${podId}/attendance/session`, {
+      const res = await fetch(`/api/pods/${podId}/attendance/session`, {
         method: 'POST'
       });
       if (res.ok) {
@@ -85,7 +85,7 @@ const StudentInfoPanel = ({ podId, onSave, isSaving }) => {
       return;
     }
     try {
-      const res = await fetch(`http://localhost:8000/api/pods/${podId}/attendance/submit`, {
+      const res = await fetch(`/api/pods/${podId}/attendance/submit`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ code: submitCode, roll: submitRoll })
@@ -95,7 +95,7 @@ const StudentInfoPanel = ({ podId, onSave, isSaving }) => {
         setSubmitSuccess(json.message);
         setSubmitCode('');
         // Reload attendance data to see the check-in on the grid
-        const refreshRes = await fetch(`http://localhost:8000/api/pods/${podId}/attendance`);
+        const refreshRes = await fetch(`/api/pods/${podId}/attendance`);
         if (refreshRes.ok) {
           setData(await refreshRes.json());
         }

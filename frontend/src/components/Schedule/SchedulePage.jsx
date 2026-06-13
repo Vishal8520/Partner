@@ -35,8 +35,8 @@ const SchedulePage = () => {
     setLoading(true);
     try {
       const [schRes, podsRes] = await Promise.all([
-        fetch('http://localhost:8000/api/schedule/all'),
-        fetch('http://localhost:8000/api/pods')
+        fetch('/api/schedule/all'),
+        fetch('/api/pods')
       ]);
       if (schRes.ok && podsRes.ok) {
         setSchedules(await schRes.json());
@@ -62,7 +62,7 @@ const SchedulePage = () => {
     e.preventDefault();
     if (!newPodId || !newTitle || !newDate || !newStart || !newEnd) return;
     try {
-      const res = await fetch('http://localhost:8000/api/schedule', {
+      const res = await fetch('/api/schedule', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -92,7 +92,7 @@ const SchedulePage = () => {
     e.preventDefault();
     if (!isRescheduleOpen || !resDate || !resStart || !resEnd) return;
     try {
-      const res = await fetch(`http://localhost:8000/api/schedule/${isRescheduleOpen.id}/reschedule`, {
+      const res = await fetch(`/api/schedule/${isRescheduleOpen.id}/reschedule`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -115,7 +115,7 @@ const SchedulePage = () => {
 
   const handleAcceptReschedule = async (scheduleId) => {
     try {
-      const res = await fetch(`http://localhost:8000/api/schedule/${scheduleId}/accept`, {
+      const res = await fetch(`/api/schedule/${scheduleId}/accept`, {
         method: 'POST'
       });
       if (res.ok) {
@@ -129,7 +129,7 @@ const SchedulePage = () => {
   const handleCancelClass = async (scheduleId) => {
     if (!window.confirm("Are you sure you want to cancel this class?")) return;
     try {
-      const res = await fetch(`http://localhost:8000/api/schedule/${scheduleId}/cancel`, {
+      const res = await fetch(`/api/schedule/${scheduleId}/cancel`, {
         method: 'POST'
       });
       if (res.ok) {

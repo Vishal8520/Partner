@@ -21,7 +21,7 @@ export default function RalphLoopTool() {
     setLog([]);
     setSummary("");
     try {
-      const response = await fetch("http://localhost:8000/api/engineering/ralph-loop", {
+      const response = await fetch("/api/engineering/ralph-loop", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prd }),

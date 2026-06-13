@@ -17,7 +17,7 @@ const LoginPage = () => {
         setIsLoading(true);
         setError('');
         try {
-            const response = await fetch('http://localhost:8000/api/login', {
+            const response = await fetch('/api/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password })
@@ -54,7 +54,7 @@ const LoginPage = () => {
                 client_id: "109829381029-mockclientid.apps.googleusercontent.com",
                 callback: async (res) => {
                     try {
-                        const response = await fetch('http://localhost:8000/api/auth/google', {
+                        const response = await fetch('/api/auth/google', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify({ credential: res.credential })
@@ -80,7 +80,7 @@ const LoginPage = () => {
                     name: "Partner Google User"
                 }));
                 const mockToken = `header.${mockPayload}.signature`;
-                const response = await fetch('http://localhost:8000/api/auth/google', {
+                const response = await fetch('/api/auth/google', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ credential: mockToken })

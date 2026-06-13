@@ -14,7 +14,7 @@ const PodCard = ({ pod, onClick, onDelete }) => {
     e.stopPropagation();
     setIsDeleting(true);
     try {
-      const response = await fetch(`http://localhost:8000/api/pods/${pod.id}`, {
+      const response = await fetch(`/api/pods/${pod.id}`, {
         method: 'DELETE',
       });
       if (!response.ok) throw new Error('Failed to delete pod');

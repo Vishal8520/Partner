@@ -45,7 +45,7 @@ const DashboardPage = () => {
   useEffect(() => {
     const fetchPods = async () => {
       try {
-        const response = await fetch('http://localhost:8000/api/pods');
+        const response = await fetch('/api/pods');
         if (!response.ok) throw new Error('Failed to fetch pods');
         const data = await response.json();
         setPods(data);
@@ -80,7 +80,7 @@ const DashboardPage = () => {
             label="Backup Database" 
             onClick={() => {
               const backendUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-                ? 'http://localhost:8000/api/database/backup'
+                ? '/api/database/backup'
                 : '/api/database/backup';
               window.open(backendUrl);
             }} 
