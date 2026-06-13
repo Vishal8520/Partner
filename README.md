@@ -1,3 +1,12 @@
+---
+title: Partner
+emoji: 🤖
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+pinned: false
+---
+
 # Partner
 
 Partner is an educational platform designed to manage classes, syllabi, schedules, attendance, and live interactive sessions. It features a React-based frontend and a fast, asynchronous FastAPI backend.
