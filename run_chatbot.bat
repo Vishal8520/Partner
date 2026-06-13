@@ -1,0 +1,13 @@
+@echo off
+echo Starting Educator AI Chatbot...
+cd AI_CHATBOT
+if not exist venv (
+    echo Creating virtual environment...
+    python -m venv venv
+)
+call venv\Scripts\activate
+echo Installing/Updating dependencies...
+pip install -r requirements.txt
+echo Launching Streamlit...
+streamlit run app.py
+pause

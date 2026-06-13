@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --slate-grey: #6F7E88;
+  --charcoal-blue: #364C5F;
+  --honey-bronze: #EABC6A;
+  --porcelain: #FBFCF6;
+  --blue-slate: #53616A;
+}

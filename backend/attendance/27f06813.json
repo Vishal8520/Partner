@@ -1,0 +1,54 @@
+{
+  "dates": [
+    "2026-02-01",
+    "2026-02-02",
+    "2026-02-03"
+  ],
+  "students": [
+    {
+      "name": "Bhavesh",
+      "roll": "UCSE1001",
+      "attendance": {
+        "2026-02-01": true,
+        "2026-02-02": true,
+        "2026-02-03": true
+      }
+    },
+    {
+      "name": "Garvit",
+      "roll": "UCSE1002",
+      "attendance": {
+        "2026-02-01": true,
+        "2026-02-02": true,
+        "2026-02-03": true
+      }
+    },
+    {
+      "name": "Deepak",
+      "roll": "UCSE1003",
+      "attendance": {
+        "2026-02-01": true,
+        "2026-02-02": true,
+        "2026-02-03": true
+      }
+    },
+    {
+      "name": "Aarun",
+      "roll": "UCSE1004",
+      "attendance": {
+        "2026-02-01": true,
+        "2026-02-02": true,
+        "2026-02-03": true
+      }
+    },
+    {
+      "name": "Sita",
+      "roll": "UCSE1005",
+      "attendance": {
+        "2026-02-01": true,
+        "2026-02-02": true,
+        "2026-02-03": true
+      }
+    }
+  ]
+}

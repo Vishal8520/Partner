@@ -1,0 +1,32 @@
+# Node dependencies
+node_modules/
+frontend/node_modules/
+
+# Python virtual environment
+venv/
+backend/venv/
+
+# Environment variables
+.env
+backend/.env
+
+# Local Databases and Vector Store
+*.db
+backend/nexus.db
+backend/partner.db
+backend/chroma_db/
+backend/temp_uploads/
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Build outputs
+dist/
+frontend/dist/
+
+# Python cache files
+__pycache__/
+*.pyc

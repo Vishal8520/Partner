@@ -1,0 +1,97 @@
+import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Link } from "react-router";
+
+export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  return (
+    <footer className="py-12 text-white bg-nexus-dark-slate">
+      <div className="container px-4 mx-auto">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
+          {/* About Section */}
+          <div>
+            <h3 className="mb-4 text-lg font-semibold text-nexus-porcelain">NEXUS</h3>
+            <p className="text-sm text-nexus-slate">
+            Advanced AI Teaching Assistant
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <nav aria-label="Quick Links">
+            <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
+            <ul className="space-y-2 text-sm text-nexus-slate">
+              {[
+                { name: "How It Works", path: "/how-it-works" },
+                { name: "FAQs", path: "/support" },
+                { name: "Contact Us", path: "/support" },
+              ].map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.path}
+                    className="transition-colors hover:text-white"
+                    aria-label={link.name}
+                    onClick={scrollToTop}
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Legal Section */}
+          <nav aria-label="Legal">
+            <h3 className="mb-4 text-lg font-semibold">Legal</h3>
+            <ul className="space-y-2 text-sm text-gray-400">
+              {[
+                { name: "Terms of Service", path: "#" },
+                { name: "Privacy Policy", path: "#" },
+                { name: "Cookie Policy", path: "#" },
+              ].map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.path}
+                    className="transition-colors hover:text-white"
+                    aria-label={link.name}
+                    onClick={scrollToTop}
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Social Media */}
+          <div>
+            <h3 className="mb-4 text-lg font-semibold">Connect With Us</h3>
+            <div className="flex space-x-4">
+              {[
+                { Icon: Facebook, label: "Facebook" },
+                { Icon: Twitter, label: "Twitter" },
+                { Icon: Instagram, label: "Instagram" },
+                { Icon: Linkedin, label: "LinkedIn" },
+              ].map(({ Icon, label }) => (
+                <a
+                  key={label}
+                  href="#"
+                  className="text-gray-400 transition-colors hover:text-white"
+                  aria-label={`Follow us on ${label}`}
+                  onClick={scrollToTop}
+                >
+                  <Icon className="w-6 h-6" />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="pt-8 mt-8 text-sm text-center text-nexus-slate border-t border-nexus-slate/30">
+          <p>© {new Date().getFullYear()} Nexus. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
+}

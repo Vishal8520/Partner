@@ -1,0 +1,8 @@
+streamlit==1.42.2
+langchain==0.3.19
+langchain-google-genai==2.0.10
+langchain-community==0.3.18
+chromadb==0.6.3
+PyPDF2==3.0.1
+python-docx==1.1.2
+python-dotenv==1.0.1

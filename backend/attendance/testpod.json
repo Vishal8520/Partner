@@ -1,0 +1,21 @@
+{
+  "dates": [
+    "2026-03-21"
+  ],
+  "students": [
+    {
+      "name": "Test Student 1",
+      "roll": "123",
+      "attendance": {
+        "2026-03-21": true
+      }
+    },
+    {
+      "name": "Test Student 2",
+      "roll": "456",
+      "attendance": {
+        "2026-03-21": false
+      }
+    }
+  ]
+}

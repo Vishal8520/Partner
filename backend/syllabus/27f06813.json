@@ -1,0 +1,164 @@
+{
+  "chapters": [
+    {
+      "id": "ch-0",
+      "name": "Chapter 1: Basics",
+      "completed": false,
+      "topics": [
+        {
+          "id": "ch-0-t-0",
+          "name": "Process Management",
+          "completed": false,
+          "subtopics": [
+            {
+              "id": "ch-0-t-0-s-0",
+              "name": "Process lifecycle",
+              "completed": true
+            },
+            {
+              "id": "ch-0-t-0-s-1",
+              "name": "Scheduling algorithms",
+              "completed": true
+            },
+            {
+              "id": "ch-0-t-0-s-2",
+              "name": "Context switching",
+              "completed": true
+            }
+          ]
+        },
+        {
+          "id": "ch-0-t-1",
+          "name": "Memory Management",
+          "completed": false,
+          "subtopics": [
+            {
+              "id": "ch-0-t-1-s-0",
+              "name": "Paging",
+              "completed": true
+            },
+            {
+              "id": "ch-0-t-1-s-1",
+              "name": "Segmentation",
+              "completed": true
+            },
+            {
+              "id": "ch-0-t-1-s-2",
+              "name": "Virtual memory",
+              "completed": true
+            }
+          ]
+        },
+        {
+          "id": "ch-0-t-2-1773478942162",
+          "name": "New Topic: Verification",
+          "completed": false,
+          "subtopics": [
+            {
+              "id": "ch-0-t-2-s-0-1773479006788",
+              "name": "Subtopic: Test Case",
+              "completed": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch-1",
+      "name": "Ch-2",
+      "completed": false,
+      "topics": [
+        {
+          "id": "ch-1-t-0",
+          "name": "File Systems",
+          "completed": false,
+          "subtopics": [
+            {
+              "id": "ch-1-t-0-s-0",
+              "name": "FAT",
+              "completed": true
+            },
+            {
+              "id": "ch-1-t-0-s-1",
+              "name": "NTFS",
+              "completed": true
+            },
+            {
+              "id": "ch-1-t-0-s-2",
+              "name": "ext4",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "id": "ch-1-t-1",
+          "name": "I/O Systems",
+          "completed": false,
+          "subtopics": [
+            {
+              "id": "ch-1-t-1-s-0",
+              "name": "Device drivers",
+              "completed": true
+            },
+            {
+              "id": "ch-1-t-1-s-1",
+              "name": "Interrupt handling",
+              "completed": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch-2",
+      "name": "Ch-3",
+      "completed": false,
+      "topics": [
+        {
+          "id": "ch-2-t-0",
+          "name": "Concurrency",
+          "completed": false,
+          "subtopics": [
+            {
+              "id": "ch-2-t-0-s-0",
+              "name": "Threads",
+              "completed": true
+            },
+            {
+              "id": "ch-2-t-0-s-1",
+              "name": "Mutex",
+              "completed": true
+            },
+            {
+              "id": "ch-2-t-0-s-2",
+              "name": "Semaphores",
+              "completed": true
+            }
+          ]
+        },
+        {
+          "id": "ch-2-t-1",
+          "name": "Deadlocks",
+          "completed": false,
+          "subtopics": [
+            {
+              "id": "ch-2-t-1-s-0",
+              "name": "Detection",
+              "completed": true
+            },
+            {
+              "id": "ch-2-t-1-s-1",
+              "name": "Prevention",
+              "completed": true
+            },
+            {
+              "id": "ch-2-t-1-s-2",
+              "name": "Recovery",
+              "completed": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
