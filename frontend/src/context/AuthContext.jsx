@@ -7,8 +7,8 @@ export const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const token = localStorage.getItem('nexus_token');
-        const username = localStorage.getItem('nexus_user');
+        const token = localStorage.getItem('partner_token');
+        const username = localStorage.getItem('partner_user');
         if (token && username) {
             setUser({ username, token });
         }
@@ -16,14 +16,14 @@ export const AuthProvider = ({ children }) => {
     }, []);
 
     const login = (userData) => {
-        localStorage.setItem('nexus_token', userData.access_token);
-        localStorage.setItem('nexus_user', userData.username);
+        localStorage.setItem('partner_token', userData.access_token);
+        localStorage.setItem('partner_user', userData.username);
         setUser({ username: userData.username, token: userData.access_token });
     };
 
     const logout = () => {
-        localStorage.removeItem('nexus_token');
-        localStorage.removeItem('nexus_user');
+        localStorage.removeItem('partner_token');
+        localStorage.removeItem('partner_user');
         setUser(null);
     };
 

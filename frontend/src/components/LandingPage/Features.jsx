@@ -26,15 +26,15 @@ const Features = () => {
   ];
 
   return (
-    <div className="py-24 bg-gradient-to-br from-nexus-dark-slate via-nexus-blue to-nexus-dark-slate">
+    <div className="py-24 bg-gradient-to-br from-partner-dark-slate via-partner-blue to-partner-dark-slate">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-transparent bg-gradient-to-r from-nexus-bronze to-nexus-porcelain bg-clip-text mb-8">
-          Antigravity Engineering Suite
+        <h2 className="text-4xl font-bold text-center text-transparent bg-gradient-to-r from-partner-bronze to-partner-porcelain bg-clip-text mb-8">
+          Partner Engineering Suite
         </h2>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {features.map((feature, idx) => (
-            <div key={idx} className="p-6 border border-nexus-slate/30 rounded-xl bg-nexus-blue/30 backdrop-blur-lg">
-              <feature.icon className="w-12 h-12 mb-4 text-nexus-bronze" />
+            <div key={idx} className="p-6 border border-partner-slate/30 rounded-xl bg-partner-blue/30 backdrop-blur-lg">
+              <feature.icon className="w-12 h-12 mb-4 text-partner-bronze" />
               <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
               <p className="text-gray-400">{feature.description}</p>
             </div>

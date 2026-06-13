@@ -1,18 +1,18 @@
 @echo off
-title Antigravity AI - Starting Servers...
+title Partner AI - Starting Servers...
 echo.
 echo ============================================
-echo   ANTIGRAVITY AI - Starting All Servers
+echo   PARTNER AI - Starting All Servers
 echo ============================================
 echo.
 
 echo [1/2] Starting Backend (FastAPI on port 8000)...
-start "Antigravity Backend" cmd /k "cd /d "%~dp0backend" && venv\Scripts\activate && uvicorn main:app --reload --port 8000"
+start "Partner Backend" cmd /k "cd /d "%~dp0backend" && venv\Scripts\activate && uvicorn main:app --reload --port 8000"
 
 timeout /t 3 /nobreak > nul
 
 echo [2/2] Starting Frontend (Vite on port 5173)...
-start "Antigravity Frontend" cmd /k "cd /d "%~dp0frontend" && npm run dev"
+start "Partner Frontend" cmd /k "cd /d "%~dp0frontend" && npm run dev"
 
 timeout /t 4 /nobreak > nul
 

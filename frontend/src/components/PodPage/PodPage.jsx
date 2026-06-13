@@ -104,10 +104,10 @@ const PodPage = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-nexus-dark-slate flex items-center justify-center">
+      <div className="min-h-screen bg-partner-dark-slate flex items-center justify-center">
         <div className="flex flex-col items-center space-y-4">
-          <div className="w-10 h-10 border-4 border-nexus-slate/30 border-t-nexus-bronze rounded-full animate-spin"></div>
-          <p className="text-nexus-slate">Loading pod information...</p>
+          <div className="w-10 h-10 border-4 border-partner-slate/30 border-t-partner-bronze rounded-full animate-spin"></div>
+          <p className="text-partner-slate">Loading pod information...</p>
         </div>
       </div>
     );
@@ -115,12 +115,12 @@ const PodPage = () => {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-nexus-dark-slate flex items-center justify-center">
+      <div className="min-h-screen bg-partner-dark-slate flex items-center justify-center">
         <div className="max-w-md w-full bg-red-500/10 border border-red-500/20 rounded-2xl p-8 text-center space-y-4">
           <p className="text-red-400 font-medium">{error}</p>
           <button
             onClick={() => navigate('/dashboard')}
-            className="px-6 py-2 bg-nexus-blue/30 border border-nexus-slate/30 rounded-xl text-nexus-porcelain hover:bg-nexus-blue/50 transition-all"
+            className="px-6 py-2 bg-partner-blue/30 border border-partner-slate/30 rounded-xl text-partner-porcelain hover:bg-partner-blue/50 transition-all"
           >
             Back to Dashboard
           </button>
@@ -130,7 +130,7 @@ const PodPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-nexus-dark-slate text-nexus-porcelain flex flex-col font-sans">
+    <div className="min-h-screen bg-partner-dark-slate text-partner-porcelain flex flex-col font-sans">
       <PodNavbar 
         pod={pod} 
         activeTab={activeTab} 
@@ -139,11 +139,11 @@ const PodPage = () => {
       />
 
       <main className="flex-grow p-8 relative overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-nexus-blue/10 blur-[100px] rounded-full -z-10"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-nexus-bronze/5 blur-[100px] rounded-full -z-10"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-partner-blue/10 blur-[100px] rounded-full -z-10"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-partner-bronze/5 blur-[100px] rounded-full -z-10"></div>
 
-        {activeTab === 'nexus-ai' ? (
-          /* ── Nexus AI Chatbot ── */
+        {activeTab === 'partner-ai' ? (
+          /* ── Partner AI Chatbot ── */
           <div className="max-w-5xl mx-auto">
             <Chatbot podId={id} />
           </div>
@@ -157,17 +157,17 @@ const PodPage = () => {
           <div className="max-w-5xl mx-auto">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
               <div className="flex items-center space-x-4">
-                <h2 className="text-sm font-bold uppercase tracking-widest text-nexus-bronze">Syllabus</h2>
-                <div className="flex bg-nexus-blue/20 p-1 rounded-xl border border-nexus-slate/20 text-xs">
+                <h2 className="text-sm font-bold uppercase tracking-widest text-partner-bronze">Syllabus</h2>
+                <div className="flex bg-partner-blue/20 p-1 rounded-xl border border-partner-slate/20 text-xs">
                   <button
                     onClick={() => setSyllabusViewMode('graph')}
-                    className={`px-3 py-1.5 rounded-lg font-bold transition-all ${syllabusViewMode === 'graph' ? 'bg-nexus-bronze text-[#1e293b]' : 'text-nexus-slate hover:text-white'}`}
+                    className={`px-3 py-1.5 rounded-lg font-bold transition-all ${syllabusViewMode === 'graph' ? 'bg-partner-bronze text-[#1e293b]' : 'text-partner-slate hover:text-white'}`}
                   >
                     Roadmap Graph
                   </button>
                   <button
                     onClick={() => setSyllabusViewMode('checklist')}
-                    className={`px-3 py-1.5 rounded-lg font-bold transition-all ${syllabusViewMode === 'checklist' ? 'bg-nexus-blue text-white' : 'text-nexus-slate hover:text-white'}`}
+                    className={`px-3 py-1.5 rounded-lg font-bold transition-all ${syllabusViewMode === 'checklist' ? 'bg-partner-blue text-white' : 'text-partner-slate hover:text-white'}`}
                   >
                     Checklist
                   </button>
@@ -176,7 +176,7 @@ const PodPage = () => {
               
               <button 
                 onClick={() => setIsEditorOpen(true)}
-                className="p-2 rounded-xl text-nexus-slate hover:text-nexus-bronze hover:bg-nexus-blue/20 transition-all flex items-center space-x-2 border border-nexus-slate/10 hover:border-nexus-bronze/20 self-start sm:self-auto"
+                className="p-2 rounded-xl text-partner-slate hover:text-partner-bronze hover:bg-partner-blue/20 transition-all flex items-center space-x-2 border border-partner-slate/10 hover:border-partner-bronze/20 self-start sm:self-auto"
                 title="Edit Syllabus"
               >
                 <Pencil size={14} />
@@ -184,7 +184,7 @@ const PodPage = () => {
               </button>
             </div>
 
-            <div className="bg-nexus-blue/5 border border-nexus-slate/20 rounded-3xl p-6 backdrop-blur-md shadow-2xl relative">
+            <div className="bg-partner-blue/5 border border-partner-slate/20 rounded-3xl p-6 backdrop-blur-md shadow-2xl relative">
               {syllabusData && syllabusData.chapters ? (
                 syllabusViewMode === 'graph' ? (
                   <SyllabusGraph chapters={syllabusData.chapters} onToggle={handleToggle} podId={id} />
@@ -192,13 +192,13 @@ const PodPage = () => {
                   <SyllabusChecklist chapters={syllabusData.chapters} onToggle={handleToggle} />
                 )
               ) : (
-                <p className="text-nexus-slate text-center py-8">No syllabus data available.</p>
+                <p className="text-partner-slate text-center py-8">No syllabus data available.</p>
               )}
             </div>
 
             {/* Past Lectures Section */}
             <div className="mt-12">
-              <h2 className="text-sm font-bold uppercase tracking-widest text-nexus-bronze mb-6">Past Lecture Transcripts</h2>
+              <h2 className="text-sm font-bold uppercase tracking-widest text-partner-bronze mb-6">Past Lecture Transcripts</h2>
               <PastLectures podId={id} />
             </div>
           </div>

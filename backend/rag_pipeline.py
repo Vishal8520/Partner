@@ -87,7 +87,7 @@ def get_chat_chain(intent: str = "question"):
     
     # Customize prompt based on intent for a "smoother" feel
     if intent == "greeting":
-        system_prompt = "You are a friendly and professional engineering assistant from Antigravity AI. Greet the user warmly and ask what they would like to build or learn today."
+        system_prompt = "You are a friendly and professional engineering assistant from Partner AI. Greet the user warmly and ask what they would like to build or learn today."
     elif intent == "task":
         system_prompt = "You are an expert project manager. Help the user refine their task and offer to break it down using the GSD tool."
     else:

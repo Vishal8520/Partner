@@ -5,7 +5,7 @@ Partner is an educational platform designed to resolve the inefficiencies and co
 ---
 
 ## 1. Overview & BYOK AI Model Philosophy
-Partner is designed around a **Bring Your Own Key (BYOK)** model architecture (similar to Cursor and Antigravity). 
+Partner is designed around a **Bring Your Own Key (BYOK)** model architecture (similar to Cursor and Partner). 
 - **The Challenge**: Enterprise AI tutoring systems incur substantial, unpredictable token costs when scaled to entire university classes. This makes SaaS hosting costs extremely high.
 - **The Solution**: Partner separates the user interface platform from the AI inference layers. Students and teachers supply their own API credentials (e.g., Gemini, OpenAI, Anthropic, or local Ollama). Students bear the direct API costs of their personalized AI tutors, and teachers bear the API costs of their AI teaching assistants (T.A.s). Partner remains highly cost-effective and competitive against locked-in products like Google Classroom.
 

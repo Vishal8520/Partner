@@ -310,48 +310,48 @@ const LiveSession = () => {
   }
 
   return (
-    <div className="min-h-screen bg-nexus-dark-slate flex flex-col font-sans text-nexus-porcelain overflow-hidden relative">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-nexus-blue/10 via-nexus-dark-slate to-[#0f172a] -z-10 opacity-60"></div>
+    <div className="min-h-screen bg-partner-dark-slate flex flex-col font-sans text-partner-porcelain overflow-hidden relative">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-partner-blue/10 via-partner-dark-slate to-[#0f172a] -z-10 opacity-60"></div>
 
         {/* Top Header */}
-        <header className="h-14 border-b border-nexus-slate/10 flex items-center justify-between px-6 bg-nexus-dark-slate/50 backdrop-blur-sm z-10 shrink-0">
+        <header className="h-14 border-b border-partner-slate/10 flex items-center justify-between px-6 bg-partner-dark-slate/50 backdrop-blur-sm z-10 shrink-0">
              <div className="flex items-center space-x-3">
-                 <div className="w-6 h-6 bg-nexus-bronze rounded flex items-center justify-center">
-                    <span className="text-nexus-dark-slate font-bold text-xs">P</span>
+                 <div className="w-6 h-6 bg-partner-bronze rounded flex items-center justify-center">
+                    <span className="text-partner-dark-slate font-bold text-xs">P</span>
                  </div>
-                 <span className="font-semibold text-nexus-porcelain/80 text-sm tracking-wide">CLASSROOM MODE</span>
+                 <span className="font-semibold text-partner-porcelain/80 text-sm tracking-wide">CLASSROOM MODE</span>
              </div>
              
              <div className="flex items-center space-x-4">
-                 {connectionStatus === 'connecting' && <span className="flex items-center text-nexus-slate text-xs"><Loader2 size={12} className="animate-spin mr-1"/> Connecting T.A...</span>}
+                 {connectionStatus === 'connecting' && <span className="flex items-center text-partner-slate text-xs"><Loader2 size={12} className="animate-spin mr-1"/> Connecting T.A...</span>}
                  {connectionStatus === 'connected' && <span className="flex items-center text-emerald-400 text-xs"><span className="w-2 h-2 rounded-full bg-emerald-400 mr-2 animate-pulse"></span> T.A Online</span>}
                  {connectionStatus === 'error' && <span className="flex items-center text-red-400 text-xs"><AlertCircle size={12} className="mr-1"/> Disconnected</span>}
                  
-                 <button onClick={closeSession} className="text-nexus-slate hover:text-nexus-porcelain transition-colors text-sm font-medium">Exit</button>
+                 <button onClick={closeSession} className="text-partner-slate hover:text-partner-porcelain transition-colors text-sm font-medium">Exit</button>
              </div>
          </header>
 
         <main className="flex-grow flex p-6 gap-6 overflow-hidden z-10">
             {/* Left Side: Real-time Outline / Live Transcript */}
-            <div className="w-1/2 flex flex-col bg-nexus-blue/5 border border-nexus-slate/10 rounded-2xl p-6 shadow-2xl relative overflow-hidden backdrop-blur-xl">
+            <div className="w-1/2 flex flex-col bg-partner-blue/5 border border-partner-slate/10 rounded-2xl p-6 shadow-2xl relative overflow-hidden backdrop-blur-xl">
                  <div className="flex items-center justify-between mb-6">
-                     <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-nexus-porcelain to-nexus-slate">Live Transcript</h2>
+                     <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-partner-porcelain to-partner-slate">Live Transcript</h2>
                      <div className="flex items-center space-x-2">
                           {isListening && <span className="text-xs text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded-full border border-emerald-400/20">● REC</span>}
-                          <Activity className={`text-nexus-bronze ${isListening ? 'animate-pulse' : 'opacity-50'}`} size={24} />
+                          <Activity className={`text-partner-bronze ${isListening ? 'animate-pulse' : 'opacity-50'}`} size={24} />
                      </div>
                  </div>
                  
                  <div ref={outlineScrollRef} className="flex-grow overflow-y-auto pr-4 space-y-3 custom-scrollbar">
                      {fullTranscript.length === 0 && !isListening && !recap && (
-                          <div className="h-full flex flex-col items-center justify-center text-nexus-slate/50 space-y-4">
+                          <div className="h-full flex flex-col items-center justify-center text-partner-slate/50 space-y-4">
                                <Sparkles size={48} className="opacity-20" />
                                <p className="text-lg">Start speaking to capture live lecture notes.</p>
                           </div>
                      )}
 
                      {isListening && fullTranscript.length === 0 && (
-                          <div className="text-nexus-slate/40 text-center py-8">
+                          <div className="text-partner-slate/40 text-center py-8">
                                <p className="text-sm">Listening... speak or play audio near the microphone.</p>
                           </div>
                      )}
@@ -364,21 +364,21 @@ const LiveSession = () => {
                               const isLast = idx === fullTranscript.length - 1;
                               
                               return (
-                                  <div key={id} className="group flex gap-4 transition-all duration-300 hover:bg-nexus-dark-slate/20 p-4 rounded-2xl border border-transparent hover:border-nexus-slate/10">
+                                  <div key={id} className="group flex gap-4 transition-all duration-300 hover:bg-partner-dark-slate/20 p-4 rounded-2xl border border-transparent hover:border-partner-slate/10">
                                        <div className="flex flex-col items-center gap-3 mt-1 shrink-0">
-                                           <div className="w-8 h-8 rounded-full bg-gradient-to-br from-nexus-bronze/20 to-nexus-bronze/5 flex items-center justify-center border border-nexus-bronze/20 shadow-[0_0_10px_rgba(235,176,141,0.1)] group-hover:shadow-[0_0_15px_rgba(235,176,141,0.2)] transition-shadow shrink-0">
-                                               <Mic size={14} className="text-nexus-bronze" />
+                                           <div className="w-8 h-8 rounded-full bg-gradient-to-br from-partner-bronze/20 to-partner-bronze/5 flex items-center justify-center border border-partner-bronze/20 shadow-[0_0_10px_rgba(235,176,141,0.1)] group-hover:shadow-[0_0_15px_rgba(235,176,141,0.2)] transition-shadow shrink-0">
+                                               <Mic size={14} className="text-partner-bronze" />
                                            </div>
                                            {(!isLast || (isListening && transcript)) && (
-                                               <div className="w-px flex-grow min-h-[20px] bg-gradient-to-b from-nexus-bronze/20 via-nexus-slate/10 to-transparent"></div>
+                                               <div className="w-px flex-grow min-h-[20px] bg-gradient-to-b from-partner-bronze/20 via-partner-slate/10 to-transparent"></div>
                                            )}
                                        </div>
                                        <div className="flex flex-col gap-1.5 pb-2">
                                            <div className="flex items-center gap-2">
-                                               <span className="text-sm font-semibold text-nexus-porcelain/90">Instructor</span>
-                                               {timestamp && <span className="text-[11px] text-nexus-slate/60 font-medium px-2 py-0.5 rounded-md bg-nexus-dark-slate/30 border border-nexus-slate/5">{timestamp}</span>}
+                                               <span className="text-sm font-semibold text-partner-porcelain/90">Instructor</span>
+                                               {timestamp && <span className="text-[11px] text-partner-slate/60 font-medium px-2 py-0.5 rounded-md bg-partner-dark-slate/30 border border-partner-slate/5">{timestamp}</span>}
                                            </div>
-                                           <p className="text-[15px] text-nexus-porcelain/90 leading-relaxed font-light tracking-wide">{text}</p>
+                                           <p className="text-[15px] text-partner-porcelain/90 leading-relaxed font-light tracking-wide">{text}</p>
                                        </div>
                                   </div>
                               );
@@ -387,15 +387,15 @@ const LiveSession = () => {
                           {isListening && transcript && (
                               <div className="group flex gap-4 p-4 opacity-70">
                                    <div className="flex flex-col items-center gap-3 mt-1 shrink-0">
-                                       <div className="w-8 h-8 rounded-full bg-nexus-slate/10 flex items-center justify-center border border-nexus-slate/20 shrink-0">
-                                           <Loader2 size={14} className="text-nexus-slate animate-spin" />
+                                       <div className="w-8 h-8 rounded-full bg-partner-slate/10 flex items-center justify-center border border-partner-slate/20 shrink-0">
+                                           <Loader2 size={14} className="text-partner-slate animate-spin" />
                                        </div>
                                    </div>
                                    <div className="flex flex-col gap-1.5">
                                        <div className="flex items-center gap-2">
-                                           <span className="text-sm font-semibold text-nexus-slate">Listening...</span>
+                                           <span className="text-sm font-semibold text-partner-slate">Listening...</span>
                                        </div>
-                                       <p className="text-[15px] text-nexus-slate/80 italic font-light tracking-wide animate-pulse">{transcript}</p>
+                                       <p className="text-[15px] text-partner-slate/80 italic font-light tracking-wide animate-pulse">{transcript}</p>
                                    </div>
                               </div>
                           )}
@@ -423,7 +423,7 @@ const LiveSession = () => {
                   
                   {outline.length === 0 && quizzes.length === 0 && !recap && simulations.length === 0 && (
                        <div className="flex-grow rounded-2xl flex flex-col items-center justify-center min-h-[400px]">
-                            <p className="text-nexus-slate/60 text-center px-12 text-lg font-light animate-pulse">
+                            <p className="text-partner-slate/60 text-center px-12 text-lg font-light animate-pulse">
                                  AI-generated outlines, pop-quizzes, and smart recommendations will automatically appear here as the session progresses.
                             </p>
                        </div>
@@ -432,14 +432,14 @@ const LiveSession = () => {
         </main>
 
         {/* Focus Mode Bottom Bar */}
-        <footer className="h-20 border-t border-nexus-slate/10 bg-nexus-dark-slate/80 backdrop-blur-xl absolute bottom-0 left-0 w-full z-20 flex items-center justify-center px-10 shadow-[0_-10px_40px_rgba(0,0,0,0.3)]">
+        <footer className="h-20 border-t border-partner-slate/10 bg-partner-dark-slate/80 backdrop-blur-xl absolute bottom-0 left-0 w-full z-20 flex items-center justify-center px-10 shadow-[0_-10px_40px_rgba(0,0,0,0.3)]">
             <div className="flex items-center space-x-6">
                  {!isListening ? (
                       <>
                           {/* Real-time schedule integration selector */}
                           {schedules.length > 0 && (
-                            <div className="flex items-center space-x-2 bg-nexus-blue/20 px-4 py-2 border border-nexus-slate/20 rounded-full">
-                              <Calendar size={16} className="text-nexus-bronze" />
+                            <div className="flex items-center space-x-2 bg-partner-blue/20 px-4 py-2 border border-partner-slate/20 rounded-full">
+                              <Calendar size={16} className="text-partner-bronze" />
                               <select
                                 value={selectedScheduleId}
                                 onChange={e => {
@@ -447,10 +447,10 @@ const LiveSession = () => {
                                   const s = schedules.find(x => x.id === e.target.value);
                                   if (s) setSelectedClassTitle(s.title);
                                 }}
-                                className="bg-transparent text-nexus-porcelain text-xs focus:outline-none font-bold"
+                                className="bg-transparent text-partner-porcelain text-xs focus:outline-none font-bold"
                               >
                                 {schedules.map(sch => (
-                                  <option key={sch.id} value={sch.id} className="bg-nexus-dark-slate text-white text-xs">
+                                  <option key={sch.id} value={sch.id} className="bg-partner-dark-slate text-white text-xs">
                                     {sch.title} ({sch.date})
                                   </option>
                                 ))}
@@ -461,7 +461,7 @@ const LiveSession = () => {
                           <button
                              onClick={startSession}
                              disabled={connectionStatus !== 'connected'}
-                             className="flex items-center space-x-3 bg-nexus-bronze text-nexus-dark-slate px-8 py-3 rounded-full font-bold hover:bg-nexus-bronze/90 transition-all shadow-[0_0_20px_rgba(235,176,141,0.3)] hover:shadow-[0_0_30px_rgba(235,176,141,0.5)] disabled:opacity-50 disabled:cursor-not-allowed"
+                             className="flex items-center space-x-3 bg-partner-bronze text-partner-dark-slate px-8 py-3 rounded-full font-bold hover:bg-partner-bronze/90 transition-all shadow-[0_0_20px_rgba(235,176,141,0.3)] hover:shadow-[0_0_30px_rgba(235,176,141,0.5)] disabled:opacity-50 disabled:cursor-not-allowed"
                           >
                               <Mic size={20} />
                               <span>Start Speaking</span>
@@ -470,9 +470,9 @@ const LiveSession = () => {
                           <button
                              onClick={simulateLecture}
                              disabled={connectionStatus !== 'connected'}
-                             className="flex items-center space-x-3 bg-nexus-blue/20 text-nexus-porcelain border border-nexus-slate/20 px-8 py-3 rounded-full font-bold hover:bg-nexus-blue/40 transition-all shadow-[0_0_20px_rgba(54,76,95,0.2)] disabled:opacity-50 disabled:cursor-not-allowed"
+                             className="flex items-center space-x-3 bg-partner-blue/20 text-partner-porcelain border border-partner-slate/20 px-8 py-3 rounded-full font-bold hover:bg-partner-blue/40 transition-all shadow-[0_0_20px_rgba(54,76,95,0.2)] disabled:opacity-50 disabled:cursor-not-allowed"
                           >
-                              <Sparkles size={20} className="text-nexus-bronze" />
+                              <Sparkles size={20} className="text-partner-bronze" />
                               <span>Demo Lecture</span>
                           </button>
                       </>
@@ -487,11 +487,11 @@ const LiveSession = () => {
                  )}
                  
                  {isListening && (
-                      <div className="flex items-center space-x-2 text-nexus-slate">
-                           <span className="flex space-x-1 items-center bg-nexus-blue/20 px-4 py-2 rounded-full border border-nexus-slate/10">
-                               <span className="w-1 h-3 bg-nexus-bronze rounded-full animate-[bounce_1s_infinite_0.1s]"></span>
-                               <span className="w-1 h-4 bg-nexus-bronze rounded-full animate-[bounce_1s_infinite_0.2s]"></span>
-                               <span className="w-1 h-2 bg-nexus-bronze rounded-full animate-[bounce_1s_infinite_0.3s]"></span>
+                      <div className="flex items-center space-x-2 text-partner-slate">
+                           <span className="flex space-x-1 items-center bg-partner-blue/20 px-4 py-2 rounded-full border border-partner-slate/10">
+                               <span className="w-1 h-3 bg-partner-bronze rounded-full animate-[bounce_1s_infinite_0.1s]"></span>
+                               <span className="w-1 h-4 bg-partner-bronze rounded-full animate-[bounce_1s_infinite_0.2s]"></span>
+                               <span className="w-1 h-2 bg-partner-bronze rounded-full animate-[bounce_1s_infinite_0.3s]"></span>
                                <span className="text-xs ml-2 font-medium">T.A. Listening ({selectedClassTitle})</span>
                            </span>
                       </div>

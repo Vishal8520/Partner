@@ -14,13 +14,13 @@ const QUICK_PROMPTS = [
 const TypingIndicator = () => (
     <div className="flex justify-start">
         <div className="flex items-start gap-3">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-violet-500 to-nexus-blue flex items-center justify-center flex-shrink-0 shadow-lg shadow-nexus-blue/20">
+            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-violet-500 to-partner-blue flex items-center justify-center flex-shrink-0 shadow-lg shadow-partner-blue/20">
                 <Bot size={16} className="text-white" />
             </div>
             <div className="bg-white/5 border border-white/10 px-5 py-4 rounded-2xl rounded-tl-none flex gap-2 items-center">
-                <span className="w-2 h-2 bg-nexus-blue rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></span>
+                <span className="w-2 h-2 bg-partner-blue rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></span>
                 <span className="w-2 h-2 bg-violet-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></span>
-                <span className="w-2 h-2 bg-nexus-blue rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></span>
+                <span className="w-2 h-2 bg-partner-blue rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></span>
             </div>
         </div>
     </div>
@@ -106,7 +106,7 @@ const Chatbot = ({ podId }) => {
         } catch (error) {
             setMessages(prev => prev.map(msg =>
                 msg.placeholderId === placeholderId
-                    ? { ...msg, content: "⚠️ Couldn't reach Nexus AI. Please ensure the backend is running.", loading: false }
+                    ? { ...msg, content: "⚠️ Couldn't reach Partner AI. Please ensure the backend is running.", loading: false }
                     : msg
             ));
         } finally {
@@ -140,7 +140,7 @@ const Chatbot = ({ podId }) => {
                 setUploadedFiles(prev => [...prev, file.name]);
                 setMessages(prev => [...prev, {
                     role: 'assistant',
-                    content: `✅ **${file.name}** has been uploaded and indexed into Nexus AI's knowledge base. You can now ask questions about its content!`,
+                    content: `✅ **${file.name}** has been uploaded and indexed into Partner AI's knowledge base. You can now ask questions about its content!`,
                     done: true
                 }]);
             } else {
@@ -167,29 +167,29 @@ const Chatbot = ({ podId }) => {
             <div className="flex justify-between items-center px-1">
                 <div className="flex items-center gap-3">
                     <div className="relative">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-600 to-nexus-blue flex items-center justify-center shadow-lg shadow-nexus-blue/30">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-600 to-partner-blue flex items-center justify-center shadow-lg shadow-partner-blue/30">
                             <Bot size={20} className="text-white" />
                         </div>
                         <div className="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-emerald-400 rounded-full border-2 border-[#1e293b]"></div>
                     </div>
                     <div>
-                        <h1 className="text-lg font-bold text-white leading-none">Nexus AI</h1>
+                        <h1 className="text-lg font-bold text-white leading-none">Partner AI</h1>
                         <p className="text-xs text-emerald-400 mt-0.5">Online · Ready to help</p>
                     </div>
                 </div>
                 <div className="flex items-center gap-2">
                     {uploadedFiles.length > 0 && (
-                        <div className="flex items-center gap-1.5 text-xs text-nexus-slate bg-white/5 border border-white/10 rounded-lg px-3 py-1.5">
-                            <FileText size={12} className="text-nexus-bronze" />
+                        <div className="flex items-center gap-1.5 text-xs text-partner-slate bg-white/5 border border-white/10 rounded-lg px-3 py-1.5">
+                            <FileText size={12} className="text-partner-bronze" />
                             <span>{uploadedFiles.length} doc{uploadedFiles.length > 1 ? 's' : ''} indexed</span>
                         </div>
                     )}
-                    <button onClick={clearHistory} className="p-2 text-nexus-slate hover:text-red-400 hover:bg-red-400/10 rounded-lg transition-all" title="Clear History">
+                    <button onClick={clearHistory} className="p-2 text-partner-slate hover:text-red-400 hover:bg-red-400/10 rounded-lg transition-all" title="Clear History">
                         <Trash2 size={18} />
                     </button>
-                    <label className="flex items-center gap-2 px-3 py-2 bg-nexus-blue/20 text-nexus-blue border border-nexus-blue/30 hover:bg-nexus-blue hover:text-white rounded-lg cursor-pointer transition-all text-sm font-medium">
+                    <label className="flex items-center gap-2 px-3 py-2 bg-partner-blue/20 text-partner-blue border border-partner-blue/30 hover:bg-partner-blue hover:text-white rounded-lg cursor-pointer transition-all text-sm font-medium">
                         {isUploading ? (
-                            <div className="w-4 h-4 border-2 border-nexus-blue border-t-transparent rounded-full animate-spin" />
+                            <div className="w-4 h-4 border-2 border-partner-blue border-t-transparent rounded-full animate-spin" />
                         ) : <Upload size={16} />}
                         <span>{isUploading ? 'Uploading...' : 'Upload Doc'}</span>
                         <input type="file" onChange={handleFileUpload} className="hidden" accept=".pdf,.docx,.txt" disabled={isUploading} />
@@ -202,11 +202,11 @@ const Chatbot = ({ podId }) => {
                 {!hasMessages ? (
                     <div className="h-full flex flex-col items-center justify-center text-center">
                         {/* Welcome State */}
-                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-violet-600/20 to-nexus-blue/20 border border-nexus-blue/20 flex items-center justify-center mb-6 shadow-lg">
-                            <Brain size={36} className="text-nexus-blue" />
+                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-violet-600/20 to-partner-blue/20 border border-partner-blue/20 flex items-center justify-center mb-6 shadow-lg">
+                            <Brain size={36} className="text-partner-blue" />
                         </div>
-                        <h2 className="text-2xl font-bold text-white mb-2">Ask Nexus AI</h2>
-                        <p className="text-nexus-slate max-w-sm mb-8 text-sm leading-relaxed">
+                        <h2 className="text-2xl font-bold text-white mb-2">Ask Partner AI</h2>
+                        <p className="text-partner-slate max-w-sm mb-8 text-sm leading-relaxed">
                             I'm powered by your course materials, syllabus, and attendance data. Ask me anything about your studies!
                         </p>
                         {/* Quick Prompts */}
@@ -215,9 +215,9 @@ const Chatbot = ({ podId }) => {
                                 <button
                                     key={i}
                                     onClick={() => handleSendMessage(null, prompt.text)}
-                                    className="flex items-center gap-2.5 px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-left text-sm text-nexus-slate hover:bg-nexus-blue/10 hover:border-nexus-blue/30 hover:text-white transition-all group"
+                                    className="flex items-center gap-2.5 px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-left text-sm text-partner-slate hover:bg-partner-blue/10 hover:border-partner-blue/30 hover:text-white transition-all group"
                                 >
-                                    <span className="text-nexus-bronze group-hover:text-nexus-blue transition-colors">{prompt.icon}</span>
+                                    <span className="text-partner-bronze group-hover:text-partner-blue transition-colors">{prompt.icon}</span>
                                     <span>{prompt.label}</span>
                                 </button>
                             ))}
@@ -229,21 +229,21 @@ const Chatbot = ({ podId }) => {
                             <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                                 <div className="flex items-start gap-3 max-w-[82%]">
                                     {msg.role === 'assistant' && (
-                                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-violet-500 to-nexus-blue flex items-center justify-center flex-shrink-0 mt-1 shadow-lg shadow-nexus-blue/20">
+                                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-violet-500 to-partner-blue flex items-center justify-center flex-shrink-0 mt-1 shadow-lg shadow-partner-blue/20">
                                             <Bot size={15} className="text-white" />
                                         </div>
                                     )}
                                     <div className={`flex flex-col ${msg.role === 'user' ? 'items-end' : 'items-start'}`}>
                                         <div className={`px-5 py-3.5 rounded-2xl shadow-lg ${
                                             msg.role === 'user'
-                                                ? 'bg-gradient-to-br from-nexus-blue to-violet-600 text-white rounded-tr-none'
+                                                ? 'bg-gradient-to-br from-partner-blue to-violet-600 text-white rounded-tr-none'
                                                 : 'bg-white/5 border border-white/10 text-gray-100 rounded-tl-none'
                                         }`}>
                                             {msg.loading ? (
                                                 <div className="flex gap-1.5 items-center py-1">
-                                                    <span className="w-2 h-2 bg-nexus-blue rounded-full animate-bounce" style={{animationDelay:'0ms'}}></span>
+                                                    <span className="w-2 h-2 bg-partner-blue rounded-full animate-bounce" style={{animationDelay:'0ms'}}></span>
                                                     <span className="w-2 h-2 bg-violet-400 rounded-full animate-bounce" style={{animationDelay:'150ms'}}></span>
-                                                    <span className="w-2 h-2 bg-nexus-blue rounded-full animate-bounce" style={{animationDelay:'300ms'}}></span>
+                                                    <span className="w-2 h-2 bg-partner-blue rounded-full animate-bounce" style={{animationDelay:'300ms'}}></span>
                                                 </div>
                                             ) : (
                                                 <ReactMarkdown
@@ -280,7 +280,7 @@ const Chatbot = ({ podId }) => {
                                         )}
                                     </div>
                                     {msg.role === 'user' && (
-                                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-nexus-bronze to-yellow-500 flex items-center justify-center flex-shrink-0 mt-1 text-[#1e293b] font-black text-xs shadow-lg">
+                                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-partner-bronze to-yellow-500 flex items-center justify-center flex-shrink-0 mt-1 text-[#1e293b] font-black text-xs shadow-lg">
                                             ME
                                         </div>
                                     )}
@@ -300,15 +300,15 @@ const Chatbot = ({ podId }) => {
                         type="text"
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
-                        placeholder="Ask Nexus AI anything about your studies..."
-                        className="w-full pl-5 pr-5 py-4 bg-white/5 border border-white/10 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-nexus-blue/40 focus:border-nexus-blue/40 transition-all placeholder:text-gray-500 text-sm"
+                        placeholder="Ask Partner AI anything about your studies..."
+                        className="w-full pl-5 pr-5 py-4 bg-white/5 border border-white/10 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-partner-blue/40 focus:border-partner-blue/40 transition-all placeholder:text-gray-500 text-sm"
                         disabled={isLoading}
                     />
                 </div>
                 <button
                     type="submit"
                     disabled={isLoading || !input.trim()}
-                    className="p-4 bg-gradient-to-br from-nexus-blue to-violet-600 text-white rounded-2xl hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-lg shadow-nexus-blue/30 flex-shrink-0"
+                    className="p-4 bg-gradient-to-br from-partner-blue to-violet-600 text-white rounded-2xl hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-lg shadow-partner-blue/30 flex-shrink-0"
                 >
                     {isLoading ? (
                         <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
@@ -325,9 +325,9 @@ const Chatbot = ({ podId }) => {
                         <button
                             key={i}
                             onClick={() => handleSendMessage(null, prompt.text)}
-                            className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-xs text-nexus-slate hover:bg-nexus-blue/10 hover:border-nexus-blue/30 hover:text-white transition-all"
+                            className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-xs text-partner-slate hover:bg-partner-blue/10 hover:border-partner-blue/30 hover:text-white transition-all"
                         >
-                            <span className="text-nexus-bronze">{prompt.icon}</span>
+                            <span className="text-partner-bronze">{prompt.icon}</span>
                             {prompt.label}
                         </button>
                     ))}

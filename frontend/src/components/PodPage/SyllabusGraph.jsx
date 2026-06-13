@@ -53,10 +53,10 @@ const SyllabusGraph = ({ chapters, onToggle, podId }) => {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h3 className="text-lg font-bold text-nexus-porcelain flex items-center gap-2">
-            <Trophy size={18} className="text-nexus-bronze" /> Visual Syllabus Roadmap
+          <h3 className="text-lg font-bold text-partner-porcelain flex items-center gap-2">
+            <Trophy size={18} className="text-partner-bronze" /> Visual Syllabus Roadmap
           </h3>
-          <p className="text-xs text-nexus-slate">
+          <p className="text-xs text-partner-slate">
             Click chapters and topics to navigate and track details. Glowing green nodes represent completed items.
           </p>
         </div>
@@ -89,7 +89,7 @@ const SyllabusGraph = ({ chapters, onToggle, podId }) => {
 
         {/* 1. CHAPTERS COLUMN */}
         <div className="space-y-4 z-10">
-          <h4 className="text-xs font-bold text-nexus-bronze uppercase tracking-wider mb-2 flex items-center gap-1">
+          <h4 className="text-xs font-bold text-partner-bronze uppercase tracking-wider mb-2 flex items-center gap-1">
             <BookOpen size={12} /> Chapters
           </h4>
           <div className="space-y-3">
@@ -104,17 +104,17 @@ const SyllabusGraph = ({ chapters, onToggle, podId }) => {
                   onClick={() => setSelectedChapterId(ch.id)}
                   className={`p-4 rounded-2xl border transition-all duration-300 cursor-pointer backdrop-blur-sm
                     ${isActive 
-                      ? 'bg-nexus-blue/30 border-nexus-bronze/60 shadow-[0_0_15px_rgba(234,188,106,0.15)] scale-[1.02]' 
-                      : 'bg-white/5 border-white/10 hover:bg-nexus-blue/10'}
+                      ? 'bg-partner-blue/30 border-partner-bronze/60 shadow-[0_0_15px_rgba(234,188,106,0.15)] scale-[1.02]' 
+                      : 'bg-white/5 border-white/10 hover:bg-partner-blue/10'}
                     ${isCompleted ? 'border-emerald-500/30' : ''}
                   `}
                 >
                   <div className="flex justify-between items-start">
                     <div className="space-y-1 truncate pr-2">
-                      <p className={`text-sm font-bold truncate ${isActive ? 'text-nexus-porcelain' : 'text-nexus-slate'}`}>
+                      <p className={`text-sm font-bold truncate ${isActive ? 'text-partner-porcelain' : 'text-partner-slate'}`}>
                         {ch.name}
                       </p>
-                      <p className="text-[10px] text-nexus-slate/60 font-mono">
+                      <p className="text-[10px] text-partner-slate/60 font-mono">
                         Progress: {progress}%
                       </p>
                     </div>
@@ -127,7 +127,7 @@ const SyllabusGraph = ({ chapters, onToggle, podId }) => {
                       className={`w-6 h-6 rounded-lg flex items-center justify-center transition-all shrink-0
                         ${ch.completed 
                           ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' 
-                          : 'bg-white/5 text-nexus-slate/40 border border-white/10 hover:bg-white/10'}`}
+                          : 'bg-white/5 text-partner-slate/40 border border-white/10 hover:bg-white/10'}`}
                     >
                       <Check size={12} strokeWidth={3} />
                     </button>
@@ -136,7 +136,7 @@ const SyllabusGraph = ({ chapters, onToggle, podId }) => {
                   {/* Progress Bar */}
                   <div className="w-full bg-white/5 rounded-full h-1 mt-3 overflow-hidden">
                     <div
-                      className={`h-full transition-all duration-500 ${isCompleted ? 'bg-emerald-400' : 'bg-nexus-bronze'}`}
+                      className={`h-full transition-all duration-500 ${isCompleted ? 'bg-emerald-400' : 'bg-partner-bronze'}`}
                       style={{ width: `${progress}%` }}
                     />
                   </div>
@@ -148,7 +148,7 @@ const SyllabusGraph = ({ chapters, onToggle, podId }) => {
 
         {/* 2. TOPICS COLUMN */}
         <div className="space-y-4 z-10">
-          <h4 className="text-xs font-bold text-nexus-bronze uppercase tracking-wider mb-2 flex items-center gap-1">
+          <h4 className="text-xs font-bold text-partner-bronze uppercase tracking-wider mb-2 flex items-center gap-1">
             <Star size={12} /> Topics
           </h4>
           
@@ -164,13 +164,13 @@ const SyllabusGraph = ({ chapters, onToggle, podId }) => {
                     onClick={() => setSelectedTopicId(topic.id)}
                     className={`p-4 rounded-2xl border transition-all duration-300 cursor-pointer backdrop-blur-sm
                       ${isActive 
-                        ? 'bg-nexus-blue/30 border-nexus-bronze/60 shadow-[0_0_15px_rgba(234,188,106,0.15)] scale-[1.02]' 
-                        : 'bg-white/5 border-white/10 hover:bg-nexus-blue/10'}
+                        ? 'bg-partner-blue/30 border-partner-bronze/60 shadow-[0_0_15px_rgba(234,188,106,0.15)] scale-[1.02]' 
+                        : 'bg-white/5 border-white/10 hover:bg-partner-blue/10'}
                       ${isCompleted ? 'border-emerald-500/30' : ''}
                     `}
                   >
                     <div className="flex justify-between items-center gap-2">
-                      <span className={`text-sm font-semibold truncate ${isActive ? 'text-nexus-porcelain' : 'text-nexus-slate'}`}>
+                      <span className={`text-sm font-semibold truncate ${isActive ? 'text-partner-porcelain' : 'text-partner-slate'}`}>
                         {topic.name}
                       </span>
 
@@ -182,7 +182,7 @@ const SyllabusGraph = ({ chapters, onToggle, podId }) => {
                         className={`w-6 h-6 rounded-lg flex items-center justify-center transition-all shrink-0
                           ${topic.completed 
                             ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' 
-                            : 'bg-white/5 text-nexus-slate/40 border border-white/10 hover:bg-white/10'}`}
+                            : 'bg-white/5 text-partner-slate/40 border border-white/10 hover:bg-white/10'}`}
                       >
                         <Check size={12} strokeWidth={3} />
                       </button>
@@ -192,7 +192,7 @@ const SyllabusGraph = ({ chapters, onToggle, podId }) => {
               })}
             </div>
           ) : (
-            <div className="p-8 text-center bg-white/5 border border-dashed border-white/10 rounded-2xl text-nexus-slate/60 text-xs">
+            <div className="p-8 text-center bg-white/5 border border-dashed border-white/10 rounded-2xl text-partner-slate/60 text-xs">
               Select a chapter to explore topics.
             </div>
           )}
@@ -200,7 +200,7 @@ const SyllabusGraph = ({ chapters, onToggle, podId }) => {
 
         {/* 3. SUBTOPICS & STUDY HELPER COLUMN */}
         <div className="space-y-4 z-10">
-          <h4 className="text-xs font-bold text-nexus-bronze uppercase tracking-wider mb-2 flex items-center gap-1">
+          <h4 className="text-xs font-bold text-partner-bronze uppercase tracking-wider mb-2 flex items-center gap-1">
             <HelpCircle size={12} /> Subtopics & AI Prompts
           </h4>
 
@@ -209,14 +209,14 @@ const SyllabusGraph = ({ chapters, onToggle, podId }) => {
               {/* List of Subtopics */}
               {activeTopic.subtopics && activeTopic.subtopics.length > 0 ? (
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-4 space-y-3">
-                  <p className="text-[11px] font-bold text-nexus-slate uppercase tracking-wider mb-1">Subtopics Checklist</p>
+                  <p className="text-[11px] font-bold text-partner-slate uppercase tracking-wider mb-1">Subtopics Checklist</p>
                   <div className="space-y-2">
                     {activeTopic.subtopics.map((sub) => (
                       <div
                         key={sub.id}
                         onClick={() => handleToggleItem(sub.id, sub.completed)}
                         className={`flex items-center justify-between p-2.5 rounded-xl border cursor-pointer transition-all hover:bg-white/5
-                          ${sub.completed ? 'border-emerald-500/20 bg-emerald-500/5 text-emerald-400' : 'border-white/5 bg-transparent text-nexus-slate'}`}
+                          ${sub.completed ? 'border-emerald-500/20 bg-emerald-500/5 text-emerald-400' : 'border-white/5 bg-transparent text-partner-slate'}`}
                       >
                         <span className="text-xs font-medium truncate pr-2">{sub.name}</span>
                         <div className={`w-5 h-5 rounded-md flex items-center justify-center border transition-all
@@ -229,19 +229,19 @@ const SyllabusGraph = ({ chapters, onToggle, podId }) => {
                   </div>
                 </div>
               ) : (
-                <div className="p-4 bg-white/5 border border-white/10 rounded-2xl text-xs text-nexus-slate/50 italic">
+                <div className="p-4 bg-white/5 border border-white/10 rounded-2xl text-xs text-partner-slate/50 italic">
                   No subtopics listed for this topic.
                 </div>
               )}
 
               {/* Study Assistant Quick Prompts */}
-              <div className="bg-gradient-to-br from-nexus-bronze/10 to-transparent border border-nexus-bronze/20 rounded-3xl p-5 space-y-3 relative overflow-hidden backdrop-blur-md">
-                <div className="absolute top-0 right-0 w-16 h-16 bg-nexus-bronze/10 rounded-full blur-xl pointer-events-none"></div>
-                <div className="flex items-center space-x-2 text-nexus-bronze">
+              <div className="bg-gradient-to-br from-partner-bronze/10 to-transparent border border-partner-bronze/20 rounded-3xl p-5 space-y-3 relative overflow-hidden backdrop-blur-md">
+                <div className="absolute top-0 right-0 w-16 h-16 bg-partner-bronze/10 rounded-full blur-xl pointer-events-none"></div>
+                <div className="flex items-center space-x-2 text-partner-bronze">
                   <Sparkles size={16} />
                   <span className="text-xs font-bold uppercase tracking-wider">Tutor AI Helper</span>
                 </div>
-                <p className="text-xs text-nexus-porcelain/90 leading-relaxed font-light">
+                <p className="text-xs text-partner-porcelain/90 leading-relaxed font-light">
                   Copy these prompts and ask the AI chatbot to get personalized training on this topic:
                 </p>
                 <div className="space-y-2 pt-1">
@@ -250,7 +250,7 @@ const SyllabusGraph = ({ chapters, onToggle, podId }) => {
                       navigator.clipboard.writeText(`Explain the concept of '${activeTopic.name}' in simple terms with an analogy.`);
                       alert("Prompt copied to clipboard!");
                     }}
-                    className="p-2 bg-nexus-dark-slate/40 border border-nexus-slate/20 rounded-xl text-xs text-nexus-slate hover:text-nexus-porcelain hover:bg-nexus-dark-slate/60 cursor-pointer transition-colors truncate font-mono select-none"
+                    className="p-2 bg-partner-dark-slate/40 border border-partner-slate/20 rounded-xl text-xs text-partner-slate hover:text-partner-porcelain hover:bg-partner-dark-slate/60 cursor-pointer transition-colors truncate font-mono select-none"
                   >
                     "Explain '{activeTopic.name}' with analogy"
                   </div>
@@ -259,7 +259,7 @@ const SyllabusGraph = ({ chapters, onToggle, podId }) => {
                       navigator.clipboard.writeText(`Give me a 5-question practice quiz about '${activeTopic.name}' with detailed answer justifications.`);
                       alert("Prompt copied to clipboard!");
                     }}
-                    className="p-2 bg-nexus-dark-slate/40 border border-nexus-slate/20 rounded-xl text-xs text-nexus-slate hover:text-nexus-porcelain hover:bg-nexus-dark-slate/60 cursor-pointer transition-colors truncate font-mono select-none"
+                    className="p-2 bg-partner-dark-slate/40 border border-partner-slate/20 rounded-xl text-xs text-partner-slate hover:text-partner-porcelain hover:bg-partner-dark-slate/60 cursor-pointer transition-colors truncate font-mono select-none"
                   >
                     "Practice quiz for '{activeTopic.name}'"
                   </div>
@@ -267,7 +267,7 @@ const SyllabusGraph = ({ chapters, onToggle, podId }) => {
               </div>
             </div>
           ) : (
-            <div className="p-8 text-center bg-white/5 border border-dashed border-white/10 rounded-2xl text-nexus-slate/60 text-xs">
+            <div className="p-8 text-center bg-white/5 border border-dashed border-white/10 rounded-2xl text-partner-slate/60 text-xs">
               Select a topic to study with AI.
             </div>
           )}

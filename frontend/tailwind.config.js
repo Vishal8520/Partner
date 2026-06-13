@@ -6,11 +6,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        'nexus-slate': '#94A3B8', // Made brighter per user request (was #6F7E88)
-        'nexus-blue': '#364C5F',
-        'nexus-bronze': '#EABC6A',
-        'nexus-porcelain': '#FBFCF6',
-        'nexus-dark-slate': '#53616A',
+        'partner-slate': '#94A3B8', // Made brighter per user request (was #6F7E88)
+        'partner-blue': '#364C5F',
+        'partner-bronze': '#EABC6A',
+        'partner-porcelain': '#FBFCF6',
+        'partner-dark-slate': '#53616A',
       }
     },
   },

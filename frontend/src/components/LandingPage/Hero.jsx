@@ -4,26 +4,26 @@ import { LockClosedIcon, UserGroupIcon, AcademicCapIcon } from "@heroicons/react
 
 export default function Hero() {
   return (
-    <header className="relative flex items-center justify-center min-h-screen overflow-hidden bg-nexus-dark-slate">
+    <header className="relative flex items-center justify-center min-h-screen overflow-hidden bg-partner-dark-slate">
       {/* Gradient Background */}
       <div className="absolute inset-0 opacity-95">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-nexus-blue/80 via-nexus-dark-slate to-[#0f172a]/90"></div>
-        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-nexus-blue/20 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-nexus-dark-slate via-nexus-dark-slate/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-partner-blue/80 via-partner-dark-slate to-[#0f172a]/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-partner-blue/20 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-partner-dark-slate via-partner-dark-slate/50 to-transparent"></div>
       </div>
 
       {/* Content Container */}
       <div className="relative z-10 px-6 mx-auto max-w-7xl lg:px-8">
         <div className="text-center">
           {/* Pre-header Badge */}
-          <div className="inline-flex items-center mb-8 space-x-3 px-4 py-2.5 bg-nexus-bronze/10 rounded-full border border-nexus-bronze/30">
-            <span className="text-sm font-semibold text-nexus-bronze">Trusted by progressive educators worldwide</span>
+          <div className="inline-flex items-center mb-8 space-x-3 px-4 py-2.5 bg-partner-bronze/10 rounded-full border border-partner-bronze/30">
+            <span className="text-sm font-semibold text-partner-bronze">Trusted by progressive educators worldwide</span>
           </div>
 
           {/* Main Heading */}
           <h1 className="max-w-4xl mx-auto font-serif text-5xl font-medium leading-tight text-white text-balance md:text-6xl lg:text-7xl">
-            Meet Antigravity,
-            <span className="block text-transparent bg-gradient-to-r from-nexus-bronze to-nexus-porcelain bg-clip-text">
+            Meet Partner,
+            <span className="block text-transparent bg-gradient-to-r from-partner-bronze to-partner-porcelain bg-clip-text">
               The Engineering AI Platform
             </span>
           </h1>
@@ -39,7 +39,7 @@ export default function Hero() {
           <div className="flex flex-col items-center justify-center gap-6 mt-12 sm:flex-row">
             <Link
               to="/signup"
-              className="relative flex items-center justify-center gap-3 px-8 py-4 text-lg font-medium text-nexus-dark-slate transition-all rounded-lg shadow-xl group bg-gradient-to-br from-nexus-bronze to-[#f3cb87] hover:shadow-2xl hover:brightness-105"
+              className="relative flex items-center justify-center gap-3 px-8 py-4 text-lg font-medium text-partner-dark-slate transition-all rounded-lg shadow-xl group bg-gradient-to-br from-partner-bronze to-[#f3cb87] hover:shadow-2xl hover:brightness-105"
             >
               <span>Get Started</span>
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
@@ -48,13 +48,13 @@ export default function Hero() {
           </div>
 
           {/* Trust Indicators */}
-          <div className="flex flex-wrap items-center justify-center gap-8 mt-16 text-nexus-slate">
+          <div className="flex flex-wrap items-center justify-center gap-8 mt-16 text-partner-slate">
             <div className="flex items-center gap-3">
               <LockClosedIcon className="w-6 h-6 text-emerald-400" />
               <span className="text-sm">Secure In-Class Tool</span>
             </div>
             <div className="flex items-center gap-3">
-              <UserGroupIcon className="w-6 h-6 text-nexus-bronze" />
+              <UserGroupIcon className="w-6 h-6 text-partner-bronze" />
               <span className="text-sm">Adapts to Any Syllabus</span>
             </div>
             <div className="flex items-center gap-3">
@@ -96,8 +96,8 @@ export default function Hero() {
           </defs>
 
           {/* Layered patterns */}
-          <rect x="0" y="0" width="100%" height="100%" fill="url(#circles)" className="text-nexus-slate/20" />
-          <rect x="0" y="0" width="100%" height="100%" fill="url(#hexagons)" className="text-nexus-bronze/5" />
+          <rect x="0" y="0" width="100%" height="100%" fill="url(#circles)" className="text-partner-slate/20" />
+          <rect x="0" y="0" width="100%" height="100%" fill="url(#hexagons)" className="text-partner-bronze/5" />
           <rect x="0" y="0" width="100%" height="100%" fill="url(#patternOverlay)" />
           
           {/* Animated lines */}
@@ -105,7 +105,7 @@ export default function Hero() {
             d="M0 20Q40 50 80 20T160 20" 
             stroke="currentColor" 
             strokeWidth="1" 
-            className="text-nexus-bronze/20"
+            className="text-partner-bronze/20"
             strokeLinecap="round"
           >
             <animate 

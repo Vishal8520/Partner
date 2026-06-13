@@ -57,21 +57,21 @@ const SignupPage = () => {
     };
 
     return (
-        <div className="flex flex-row-reverse min-h-[85vh] bg-[#0f172a] font-sans text-nexus-porcelain overflow-hidden relative rounded-[2.5rem] shadow-2xl mx-8 my-8 border border-white/10">
+        <div className="flex flex-row-reverse min-h-[85vh] bg-[#0f172a] font-sans text-partner-porcelain overflow-hidden relative rounded-[2.5rem] shadow-2xl mx-8 my-8 border border-white/10">
             {/* Left Column: Form (Now on Right due to flex-row-reverse) */}
-            <div className="w-full lg:w-1/2 flex flex-col justify-center px-8 sm:px-16 lg:px-24 py-12 relative z-10 bg-nexus-dark-slate/80 backdrop-blur-xl">
+            <div className="w-full lg:w-1/2 flex flex-col justify-center px-8 sm:px-16 lg:px-24 py-12 relative z-10 bg-partner-dark-slate/80 backdrop-blur-xl">
                 <motion.div 
                     initial={{ opacity: 0, y: 30 }} 
                     animate={{ opacity: 1, y: 0 }} 
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                     className="max-w-md w-full mx-auto"
                 >
-                    <Link to="/" className="inline-block mb-10 text-nexus-bronze font-bold text-2xl tracking-tighter hover:opacity-80 transition-opacity">
+                    <Link to="/" className="inline-block mb-10 text-partner-bronze font-bold text-2xl tracking-tighter hover:opacity-80 transition-opacity">
                         PARTNER.
                     </Link>
 
                     <h2 className="text-4xl font-black mb-3 tracking-tight">Create your account</h2>
-                    <p className="text-nexus-slate mb-8 text-lg">Start building your intelligent workspaces today.</p>
+                    <p className="text-partner-slate mb-8 text-lg">Start building your intelligent workspaces today.</p>
                     
                     {error && (
                         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm flex items-center shadow-lg">
@@ -82,7 +82,7 @@ const SignupPage = () => {
 
                     <form onSubmit={handleSubmit} className="space-y-4">
                         <div className="relative group">
-                            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-nexus-slate group-focus-within:text-nexus-bronze transition-colors">
+                            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-partner-slate group-focus-within:text-partner-bronze transition-colors">
                                 <User size={20} />
                             </div>
                             <input 
@@ -91,12 +91,12 @@ const SignupPage = () => {
                                 value={username} 
                                 onChange={e => setUsername(e.target.value)} 
                                 required
-                                className="w-full pl-11 pr-4 py-4 rounded-xl bg-black/20 border border-white/10 text-white placeholder-nexus-slate/50 focus:outline-none focus:border-nexus-bronze focus:ring-1 focus:ring-nexus-bronze transition-all" 
+                                className="w-full pl-11 pr-4 py-4 rounded-xl bg-black/20 border border-white/10 text-white placeholder-partner-slate/50 focus:outline-none focus:border-partner-bronze focus:ring-1 focus:ring-partner-bronze transition-all" 
                             />
                         </div>
 
                         <div className="relative group">
-                            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-nexus-slate group-focus-within:text-nexus-bronze transition-colors">
+                            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-partner-slate group-focus-within:text-partner-bronze transition-colors">
                                 <Mail size={20} />
                             </div>
                             <input 
@@ -105,12 +105,12 @@ const SignupPage = () => {
                                 value={email} 
                                 onChange={e => setEmail(e.target.value)} 
                                 required
-                                className="w-full pl-11 pr-4 py-4 rounded-xl bg-black/20 border border-white/10 text-white placeholder-nexus-slate/50 focus:outline-none focus:border-nexus-bronze focus:ring-1 focus:ring-nexus-bronze transition-all" 
+                                className="w-full pl-11 pr-4 py-4 rounded-xl bg-black/20 border border-white/10 text-white placeholder-partner-slate/50 focus:outline-none focus:border-partner-bronze focus:ring-1 focus:ring-partner-bronze transition-all" 
                             />
                         </div>
 
                         <div className="relative group">
-                            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-nexus-slate group-focus-within:text-nexus-bronze transition-colors">
+                            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-partner-slate group-focus-within:text-partner-bronze transition-colors">
                                 <Lock size={20} />
                             </div>
                             <input 
@@ -119,14 +119,14 @@ const SignupPage = () => {
                                 value={password} 
                                 onChange={e => setPassword(e.target.value)} 
                                 required
-                                className="w-full pl-11 pr-4 py-4 rounded-xl bg-black/20 border border-white/10 text-white placeholder-nexus-slate/50 focus:outline-none focus:border-nexus-bronze focus:ring-1 focus:ring-nexus-bronze transition-all" 
+                                className="w-full pl-11 pr-4 py-4 rounded-xl bg-black/20 border border-white/10 text-white placeholder-partner-slate/50 focus:outline-none focus:border-partner-bronze focus:ring-1 focus:ring-partner-bronze transition-all" 
                             />
                         </div>
 
                         <button 
                             type="submit" 
                             disabled={isLoading}
-                            className="w-full py-4 mt-2 rounded-xl bg-gradient-to-r from-nexus-bronze to-yellow-500 font-bold text-nexus-blue hover:shadow-[0_0_30px_rgba(235,176,141,0.4)] hover:scale-[1.02] transition-all disabled:opacity-70 disabled:hover:scale-100 flex items-center justify-center space-x-2 shadow-xl"
+                            className="w-full py-4 mt-2 rounded-xl bg-gradient-to-r from-partner-bronze to-yellow-500 font-bold text-partner-blue hover:shadow-[0_0_30px_rgba(235,176,141,0.4)] hover:scale-[1.02] transition-all disabled:opacity-70 disabled:hover:scale-100 flex items-center justify-center space-x-2 shadow-xl"
                         >
                             <span>{isLoading ? 'Creating Account...' : 'Sign up'}</span>
                             {!isLoading && <ArrowRight size={18} />}
@@ -135,7 +135,7 @@ const SignupPage = () => {
 
                     <div className="mt-8 flex items-center justify-center space-x-4">
                         <div className="h-px bg-white/10 flex-grow"></div>
-                        <span className="text-nexus-slate text-sm font-medium tracking-wide">OR SIGN UP WITH</span>
+                        <span className="text-partner-slate text-sm font-medium tracking-wide">OR SIGN UP WITH</span>
                         <div className="h-px bg-white/10 flex-grow"></div>
                     </div>
 
@@ -150,17 +150,17 @@ const SignupPage = () => {
                         </button>
                     </div>
 
-                    <p className="mt-8 text-center text-nexus-slate">
-                        Already have an account? <Link to="/login" className="text-nexus-bronze hover:text-white transition-colors font-bold ml-1">Log in</Link>
+                    <p className="mt-8 text-center text-partner-slate">
+                        Already have an account? <Link to="/login" className="text-partner-bronze hover:text-white transition-colors font-bold ml-1">Log in</Link>
                     </p>
                 </motion.div>
             </div>
 
             {/* Right Column: Visual Showcase (Now on Left) */}
-            <div className="hidden lg:flex lg:w-1/2 relative bg-nexus-blue/10 items-center justify-center overflow-hidden">
+            <div className="hidden lg:flex lg:w-1/2 relative bg-partner-blue/10 items-center justify-center overflow-hidden">
                 {/* Abstract animated background */}
                 <div className="absolute inset-0 z-0 opacity-80">
-                    <div className="absolute top-1/2 left-1/4 w-[700px] h-[700px] bg-nexus-blue/20 rounded-full mix-blend-screen filter blur-[120px] animate-[pulse_7s_ease-in-out_infinite] -translate-y-1/2"></div>
+                    <div className="absolute top-1/2 left-1/4 w-[700px] h-[700px] bg-partner-blue/20 rounded-full mix-blend-screen filter blur-[120px] animate-[pulse_7s_ease-in-out_infinite] -translate-y-1/2"></div>
                 </div>
 
                 {/* Glass Card Floating */}
@@ -174,22 +174,22 @@ const SignupPage = () => {
                         <GraduationCap className="text-white w-8 h-8" />
                     </div>
                     
-                    <h3 className="text-4xl font-black text-white mb-6 leading-tight">Elevate your <br/><span className="bg-clip-text text-transparent bg-gradient-to-r from-nexus-porcelain to-nexus-blue">learning modules.</span></h3>
-                    <p className="text-nexus-slate text-lg mb-8 leading-relaxed font-medium">
+                    <h3 className="text-4xl font-black text-white mb-6 leading-tight">Elevate your <br/><span className="bg-clip-text text-transparent bg-gradient-to-r from-partner-porcelain to-partner-blue">learning modules.</span></h3>
+                    <p className="text-partner-slate text-lg mb-8 leading-relaxed font-medium">
                         Convert static curriculum documents into sprawling interactive trees, live intelligent quizzes, and real-time recaps. 
                     </p>
                     
                     <div className="space-y-4">
                         <div className="flex items-center space-x-3 text-white font-medium">
-                            <div className="w-6 h-6 rounded-full bg-nexus-bronze/20 flex items-center justify-center text-nexus-bronze border border-nexus-bronze/50"><svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg></div>
+                            <div className="w-6 h-6 rounded-full bg-partner-bronze/20 flex items-center justify-center text-partner-bronze border border-partner-bronze/50"><svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg></div>
                             <span>Instant Interactive Checklists</span>
                         </div>
                         <div className="flex items-center space-x-3 text-white font-medium">
-                            <div className="w-6 h-6 rounded-full bg-nexus-bronze/20 flex items-center justify-center text-nexus-bronze border border-nexus-bronze/50"><svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg></div>
+                            <div className="w-6 h-6 rounded-full bg-partner-bronze/20 flex items-center justify-center text-partner-bronze border border-partner-bronze/50"><svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg></div>
                             <span>Semantic Progress Analytics</span>
                         </div>
                         <div className="flex items-center space-x-3 text-white font-medium">
-                            <div className="w-6 h-6 rounded-full bg-nexus-bronze/20 flex items-center justify-center text-nexus-bronze border border-nexus-bronze/50"><svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg></div>
+                            <div className="w-6 h-6 rounded-full bg-partner-bronze/20 flex items-center justify-center text-partner-bronze border border-partner-bronze/50"><svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg></div>
                             <span>Seamless Multi-Device Sync</span>
                         </div>
                     </div>

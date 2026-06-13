@@ -37,10 +37,10 @@ export default function RalphLoopTool() {
   };
 
   return (
-    <div className="bg-nexus-blue/20 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl h-full flex flex-col">
+    <div className="bg-partner-blue/20 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl h-full flex flex-col">
       <div className="flex items-center gap-3 mb-6">
-        <div className="p-2 bg-nexus-bronze/20 rounded-lg">
-          <Repeat className="text-nexus-bronze w-6 h-6" />
+        <div className="p-2 bg-partner-bronze/20 rounded-lg">
+          <Repeat className="text-partner-bronze w-6 h-6" />
         </div>
         <div>
           <h2 className="text-xl font-bold text-white uppercase tracking-wider">Ralph Loop</h2>
@@ -53,12 +53,12 @@ export default function RalphLoopTool() {
           value={prd}
           onChange={(e) => setPrd(e.target.value)}
           placeholder="Paste your PRD or technical requirements here..."
-          className="w-full h-32 bg-nexus-dark-slate/40 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-nexus-bronze/50 transition-all resize-none"
+          className="w-full h-32 bg-partner-dark-slate/40 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-partner-bronze/50 transition-all resize-none"
         />
         <button
           onClick={handleRunLoop}
           disabled={loading}
-          className="w-full bg-nexus-bronze text-nexus-dark-slate py-3 rounded-xl font-bold hover:brightness-110 transition-all disabled:opacity-50 flex items-center justify-center gap-2"
+          className="w-full bg-partner-bronze text-partner-dark-slate py-3 rounded-xl font-bold hover:brightness-110 transition-all disabled:opacity-50 flex items-center justify-center gap-2"
         >
           {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Play className="w-5 h-5" />}
           <span>Start Loop</span>
@@ -79,8 +79,8 @@ export default function RalphLoopTool() {
                 animate={{ opacity: 1, x: 0 }}
                 className="flex items-center gap-2"
               >
-                <span className="text-nexus-bronze mr-1">$</span>
-                <span className={entry.status === "completed" ? "text-emerald-400" : "text-nexus-slate animate-pulse"}>
+                <span className="text-partner-bronze mr-1">$</span>
+                <span className={entry.status === "completed" ? "text-emerald-400" : "text-partner-slate animate-pulse"}>
                   {entry.message}
                 </span>
                 {entry.status === "completed" && <CheckCircle className="w-3 h-3 text-emerald-400 ml-auto" />}
@@ -96,15 +96,15 @@ export default function RalphLoopTool() {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="bg-nexus-bronze/10 border border-nexus-bronze/20 rounded-xl p-4 relative group"
+            className="bg-partner-bronze/10 border border-partner-bronze/20 rounded-xl p-4 relative group"
           >
             <button
               onClick={handleCopy}
-              className="absolute top-3 right-3 p-1.5 text-gray-500 hover:text-white transition-colors bg-nexus-dark-slate/50 rounded-lg opacity-0 group-hover:opacity-100"
+              className="absolute top-3 right-3 p-1.5 text-gray-500 hover:text-white transition-colors bg-partner-dark-slate/50 rounded-lg opacity-0 group-hover:opacity-100"
             >
               {copied ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
             </button>
-            <h3 className="text-nexus-bronze text-xs font-bold uppercase mb-2">Build Summary</h3>
+            <h3 className="text-partner-bronze text-xs font-bold uppercase mb-2">Build Summary</h3>
             <p className="text-gray-300 text-sm italic pr-8">"{summary}"</p>
           </motion.div>
         )}

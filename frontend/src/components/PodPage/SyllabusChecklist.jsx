@@ -4,7 +4,7 @@ import { Circle, CheckCircle2, ChevronRight, ChevronDown } from 'lucide-react';
 const CheckItem = ({ checked, label, level, onClick }) => {
   const indent = level === 0 ? '' : level === 1 ? 'ml-6' : 'ml-12';
   const textSize = level === 0 ? 'text-base font-semibold' : level === 1 ? 'text-sm font-medium' : 'text-sm';
-  const iconColor = checked ? 'text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]' : 'text-nexus-slate/50';
+  const iconColor = checked ? 'text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]' : 'text-partner-slate/50';
 
   return (
     <button
@@ -13,14 +13,14 @@ const CheckItem = ({ checked, label, level, onClick }) => {
         ${indent}
         ${checked
           ? 'bg-yellow-400/5 border border-yellow-400/20 shadow-[0_0_15px_rgba(250,204,21,0.1)]'
-          : 'bg-nexus-blue/10 border border-nexus-slate/10 hover:border-nexus-bronze/20 hover:bg-nexus-blue/15'
+          : 'bg-partner-blue/10 border border-partner-slate/10 hover:border-partner-bronze/20 hover:bg-partner-blue/15'
         }`}
     >
       {checked
         ? <CheckCircle2 size={level === 0 ? 20 : 16} className={`${iconColor} flex-shrink-0`} />
         : <Circle size={level === 0 ? 20 : 16} className={`${iconColor} flex-shrink-0`} />
       }
-      <span className={`${textSize} ${checked ? 'text-yellow-400 font-medium line-through drop-shadow-[0_0_5px_rgba(250,204,21,0.4)]' : 'text-nexus-porcelain/90'}`}>
+      <span className={`${textSize} ${checked ? 'text-yellow-400 font-medium line-through drop-shadow-[0_0_5px_rgba(250,204,21,0.4)]' : 'text-partner-porcelain/90'}`}>
         {label}
       </span>
     </button>
@@ -66,18 +66,18 @@ const SyllabusChecklist = ({ chapters, onToggle }) => {
 
   return (
     <div className="space-y-4">
-      <div className="mb-6 p-6 rounded-2xl bg-nexus-blue/10 border border-nexus-slate/20 backdrop-blur-sm">
+      <div className="mb-6 p-6 rounded-2xl bg-partner-blue/10 border border-partner-slate/20 backdrop-blur-sm">
         <div className="flex items-center justify-between mb-3">
-          <h3 className="text-lg font-bold text-nexus-porcelain">Curriculum Progress</h3>
-          <span className="text-2xl font-black text-nexus-bronze">{progressPercent}%</span>
+          <h3 className="text-lg font-bold text-partner-porcelain">Curriculum Progress</h3>
+          <span className="text-2xl font-black text-partner-bronze">{progressPercent}%</span>
         </div>
-        <div className="w-full bg-nexus-dark-slate/50 h-3 rounded-full overflow-hidden shadow-inner border border-nexus-slate/10">
+        <div className="w-full bg-partner-dark-slate/50 h-3 rounded-full overflow-hidden shadow-inner border border-partner-slate/10">
           <div 
-            className="bg-gradient-to-r from-nexus-bronze to-yellow-500 h-full rounded-full transition-all duration-1000 ease-out shadow-[0_0_15px_rgba(250,204,21,0.5)]" 
+            className="bg-gradient-to-r from-partner-bronze to-yellow-500 h-full rounded-full transition-all duration-1000 ease-out shadow-[0_0_15px_rgba(250,204,21,0.5)]" 
             style={{ width: `${progressPercent}%` }}
           ></div>
         </div>
-        <p className="text-xs text-nexus-slate mt-3 text-right">{completedItems} of {totalItems} modules mastered</p>
+        <p className="text-xs text-partner-slate mt-3 text-right">{completedItems} of {totalItems} modules mastered</p>
       </div>
 
       {chapters.map((chapter) => {
@@ -94,7 +94,7 @@ const SyllabusChecklist = ({ chapters, onToggle }) => {
               {chapter.topics.length > 0 && (
                 <button
                   onClick={() => toggleExpand(chapter.id)}
-                  className="p-1 rounded-lg hover:bg-nexus-blue/20 text-nexus-slate transition-all"
+                  className="p-1 rounded-lg hover:bg-partner-blue/20 text-partner-slate transition-all"
                 >
                   {chapterExpanded
                     ? <ChevronDown size={16} />
@@ -125,7 +125,7 @@ const SyllabusChecklist = ({ chapters, onToggle }) => {
                     {topic.subtopics.length > 0 && (
                       <button
                         onClick={() => toggleExpand(topic.id)}
-                        className="p-1 rounded-lg hover:bg-nexus-blue/20 text-nexus-slate transition-all"
+                        className="p-1 rounded-lg hover:bg-partner-blue/20 text-partner-slate transition-all"
                       >
                         {topicExpanded
                           ? <ChevronDown size={14} />

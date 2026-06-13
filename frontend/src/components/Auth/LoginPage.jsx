@@ -101,21 +101,21 @@ const LoginPage = () => {
     };
 
     return (
-        <div className="flex min-h-[85vh] bg-[#0f172a] font-sans text-nexus-porcelain overflow-hidden relative rounded-[2.5rem] shadow-2xl mx-8 my-8 border border-white/10">
+        <div className="flex min-h-[85vh] bg-[#0f172a] font-sans text-partner-porcelain overflow-hidden relative rounded-[2.5rem] shadow-2xl mx-8 my-8 border border-white/10">
             {/* Left Column: Form */}
-            <div className="w-full lg:w-1/2 flex flex-col justify-center px-8 sm:px-16 lg:px-24 py-12 relative z-10 bg-nexus-dark-slate/80 backdrop-blur-xl">
+            <div className="w-full lg:w-1/2 flex flex-col justify-center px-8 sm:px-16 lg:px-24 py-12 relative z-10 bg-partner-dark-slate/80 backdrop-blur-xl">
                 <motion.div 
                     initial={{ opacity: 0, y: 30 }} 
                     animate={{ opacity: 1, y: 0 }} 
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                     className="max-w-md w-full mx-auto"
                 >
-                    <Link to="/" className="inline-block mb-10 text-nexus-bronze font-bold text-2xl tracking-tighter hover:opacity-80 transition-opacity">
+                    <Link to="/" className="inline-block mb-10 text-partner-bronze font-bold text-2xl tracking-tighter hover:opacity-80 transition-opacity">
                         PARTNER.
                     </Link>
 
                     <h2 className="text-4xl font-black mb-3 tracking-tight">Welcome back</h2>
-                    <p className="text-nexus-slate mb-8 text-lg">Enter your details to access your workspace.</p>
+                    <p className="text-partner-slate mb-8 text-lg">Enter your details to access your workspace.</p>
                     
                     {error && (
                         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm flex items-center shadow-lg">
@@ -126,7 +126,7 @@ const LoginPage = () => {
 
                     <form onSubmit={handleSubmit} className="space-y-5">
                         <div className="relative group">
-                            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-nexus-slate group-focus-within:text-nexus-bronze transition-colors">
+                            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-partner-slate group-focus-within:text-partner-bronze transition-colors">
                                 <User size={20} />
                             </div>
                             <input 
@@ -135,12 +135,12 @@ const LoginPage = () => {
                                 value={username} 
                                 onChange={e => setUsername(e.target.value)} 
                                 required
-                                className="w-full pl-11 pr-4 py-4 rounded-xl bg-black/20 border border-white/10 text-white placeholder-nexus-slate/50 focus:outline-none focus:border-nexus-bronze focus:ring-1 focus:ring-nexus-bronze transition-all" 
+                                className="w-full pl-11 pr-4 py-4 rounded-xl bg-black/20 border border-white/10 text-white placeholder-partner-slate/50 focus:outline-none focus:border-partner-bronze focus:ring-1 focus:ring-partner-bronze transition-all" 
                             />
                         </div>
 
                         <div className="relative group">
-                            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-nexus-slate group-focus-within:text-nexus-bronze transition-colors">
+                            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-partner-slate group-focus-within:text-partner-bronze transition-colors">
                                 <Lock size={20} />
                             </div>
                             <input 
@@ -149,22 +149,22 @@ const LoginPage = () => {
                                 value={password} 
                                 onChange={e => setPassword(e.target.value)} 
                                 required
-                                className="w-full pl-11 pr-4 py-4 rounded-xl bg-black/20 border border-white/10 text-white placeholder-nexus-slate/50 focus:outline-none focus:border-nexus-bronze focus:ring-1 focus:ring-nexus-bronze transition-all" 
+                                className="w-full pl-11 pr-4 py-4 rounded-xl bg-black/20 border border-white/10 text-white placeholder-partner-slate/50 focus:outline-none focus:border-partner-bronze focus:ring-1 focus:ring-partner-bronze transition-all" 
                             />
                         </div>
 
                         <div className="flex items-center justify-between text-sm py-2">
-                            <label className="flex items-center text-nexus-slate cursor-pointer hover:text-white transition-colors">
-                                <input type="checkbox" className="mr-2 rounded border-white/10 bg-black/20 text-nexus-bronze focus:ring-0 focus:ring-offset-0" />
+                            <label className="flex items-center text-partner-slate cursor-pointer hover:text-white transition-colors">
+                                <input type="checkbox" className="mr-2 rounded border-white/10 bg-black/20 text-partner-bronze focus:ring-0 focus:ring-offset-0" />
                                 Remember me
                             </label>
-                            <a href="#" className="text-nexus-bronze hover:underline font-medium hover:text-yellow-400 transition-colors">Forgot password?</a>
+                            <a href="#" className="text-partner-bronze hover:underline font-medium hover:text-yellow-400 transition-colors">Forgot password?</a>
                         </div>
 
                         <button 
                             type="submit" 
                             disabled={isLoading}
-                            className="w-full py-4 rounded-xl bg-gradient-to-r from-nexus-bronze to-yellow-500 font-bold text-nexus-blue hover:shadow-[0_0_30px_rgba(235,176,141,0.4)] hover:scale-[1.02] transition-all disabled:opacity-70 disabled:hover:scale-100 flex items-center justify-center space-x-2 shadow-xl"
+                            className="w-full py-4 rounded-xl bg-gradient-to-r from-partner-bronze to-yellow-500 font-bold text-partner-blue hover:shadow-[0_0_30px_rgba(235,176,141,0.4)] hover:scale-[1.02] transition-all disabled:opacity-70 disabled:hover:scale-100 flex items-center justify-center space-x-2 shadow-xl"
                         >
                             <span>{isLoading ? 'Signing in...' : 'Sign in'}</span>
                             {!isLoading && <ArrowRight size={18} />}
@@ -173,7 +173,7 @@ const LoginPage = () => {
 
                     <div className="mt-8 flex items-center justify-center space-x-4">
                         <div className="h-px bg-white/10 flex-grow"></div>
-                        <span className="text-nexus-slate text-sm font-medium tracking-wide">OR CONTINUE WITH</span>
+                        <span className="text-partner-slate text-sm font-medium tracking-wide">OR CONTINUE WITH</span>
                         <div className="h-px bg-white/10 flex-grow"></div>
                     </div>
 
@@ -192,8 +192,8 @@ const LoginPage = () => {
                         </button>
                     </div>
 
-                    <p className="mt-8 text-center text-nexus-slate">
-                        Don't have an account? <Link to="/signup" className="text-nexus-bronze hover:text-white transition-colors font-bold ml-1">Sign up for free</Link>
+                    <p className="mt-8 text-center text-partner-slate">
+                        Don't have an account? <Link to="/signup" className="text-partner-bronze hover:text-white transition-colors font-bold ml-1">Sign up for free</Link>
                     </p>
                 </motion.div>
             </div>
@@ -202,8 +202,8 @@ const LoginPage = () => {
             <div className="hidden lg:flex lg:w-1/2 relative bg-[#0a1017] items-center justify-center overflow-hidden">
                 {/* Abstract animated background */}
                 <div className="absolute inset-0 z-0 opacity-80">
-                    <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-nexus-blue/20 rounded-full mix-blend-screen filter blur-[100px] animate-[pulse_6s_ease-in-out_infinite]"></div>
-                    <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-nexus-bronze/10 rounded-full mix-blend-screen filter blur-[80px] animate-[pulse_8s_ease-in-out_infinite_1s]"></div>
+                    <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-partner-blue/20 rounded-full mix-blend-screen filter blur-[100px] animate-[pulse_6s_ease-in-out_infinite]"></div>
+                    <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-partner-bronze/10 rounded-full mix-blend-screen filter blur-[80px] animate-[pulse_8s_ease-in-out_infinite_1s]"></div>
                 </div>
 
                 {/* Glass Card Floating */}
@@ -213,26 +213,26 @@ const LoginPage = () => {
                     transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
                     className="relative z-10 p-12 max-w-lg rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-3xl shadow-[0_20px_60px_rgba(35,51,64,0.4)] leading-relaxed"
                 >
-                    <div className="w-16 h-16 rounded-2xl bg-nexus-bronze/20 flex items-center justify-center mb-8 border border-nexus-bronze/30 shadow-[0_0_30px_rgba(235,176,141,0.2)]">
-                        <Sparkles className="text-nexus-bronze w-8 h-8" />
+                    <div className="w-16 h-16 rounded-2xl bg-partner-bronze/20 flex items-center justify-center mb-8 border border-partner-bronze/30 shadow-[0_0_30px_rgba(235,176,141,0.2)]">
+                        <Sparkles className="text-partner-bronze w-8 h-8" />
                     </div>
                     
-                    <h3 className="text-4xl font-black text-white mb-6 leading-tight">The ultimate <br/><span className="bg-clip-text text-transparent bg-gradient-to-r from-nexus-bronze to-yellow-500">AI teaching assistant.</span></h3>
-                    <p className="text-nexus-slate text-lg mb-10 leading-relaxed font-medium">
+                    <h3 className="text-4xl font-black text-white mb-6 leading-tight">The ultimate <br/><span className="bg-clip-text text-transparent bg-gradient-to-r from-partner-bronze to-yellow-500">AI teaching assistant.</span></h3>
+                    <p className="text-partner-slate text-lg mb-10 leading-relaxed font-medium">
                         Partner transforms static course materials into deeply interactive, intelligent live tutoring sessions. Join thousands of educators upgrading their classrooms today.
                     </p>
                     
                     <div className="flex items-center justify-between border-t border-white/10 pt-6">
                         <div className="flex -space-x-3">
                             {[1, 2, 3, 4, 5].map(i => (
-                                <div key={i} className="w-10 h-10 rounded-full border-2 border-[#0a1017] bg-nexus-blue flex items-center justify-center overflow-hidden shadow-lg hover:-translate-y-1 transition-transform">
+                                <div key={i} className="w-10 h-10 rounded-full border-2 border-[#0a1017] bg-partner-blue flex items-center justify-center overflow-hidden shadow-lg hover:-translate-y-1 transition-transform">
                                      <img src={`https://api.dicebear.com/7.x/notionists/svg?seed=${i+10}&backgroundColor=transparent`} alt="avatar" />
                                 </div>
                             ))}
                         </div>
                         <div className="text-right">
                            <div className="text-xl font-black text-white">10k+</div>
-                           <div className="text-xs font-bold tracking-widest text-nexus-slate uppercase">Active Users</div>
+                           <div className="text-xs font-bold tracking-widest text-partner-slate uppercase">Active Users</div>
                         </div>
                     </div>
                 </motion.div>

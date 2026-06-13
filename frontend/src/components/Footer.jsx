@@ -7,13 +7,13 @@ export default function Footer() {
   };
 
   return (
-    <footer className="py-12 text-white bg-nexus-dark-slate">
+    <footer className="py-12 text-white bg-partner-dark-slate">
       <div className="container px-4 mx-auto">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           {/* About Section */}
           <div>
-            <h3 className="mb-4 text-lg font-semibold text-nexus-porcelain">NEXUS</h3>
-            <p className="text-sm text-nexus-slate">
+            <h3 className="mb-4 text-lg font-semibold text-partner-porcelain">PARTNER</h3>
+            <p className="text-sm text-partner-slate">
             Advanced AI Teaching Assistant
             </p>
           </div>
@@ -21,7 +21,7 @@ export default function Footer() {
           {/* Quick Links */}
           <nav aria-label="Quick Links">
             <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
-            <ul className="space-y-2 text-sm text-nexus-slate">
+            <ul className="space-y-2 text-sm text-partner-slate">
               {[
                 { name: "How It Works", path: "/how-it-works" },
                 { name: "FAQs", path: "/support" },
@@ -88,8 +88,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 mt-8 text-sm text-center text-nexus-slate border-t border-nexus-slate/30">
-          <p>© {new Date().getFullYear()} Nexus. All rights reserved.</p>
+        <div className="pt-8 mt-8 text-sm text-center text-partner-slate border-t border-partner-slate/30">
+          <p>© {new Date().getFullYear()} Partner. All rights reserved.</p>
         </div>
       </div>
     </footer>

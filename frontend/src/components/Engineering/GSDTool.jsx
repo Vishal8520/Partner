@@ -33,10 +33,10 @@ export default function GSDTool() {
   };
 
   return (
-    <div className="bg-nexus-blue/20 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl h-full flex flex-col">
+    <div className="bg-partner-blue/20 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl h-full flex flex-col">
       <div className="flex items-center gap-3 mb-6">
-        <div className="p-2 bg-nexus-bronze/20 rounded-lg">
-          <ListTodo className="text-nexus-bronze w-6 h-6" />
+        <div className="p-2 bg-partner-bronze/20 rounded-lg">
+          <ListTodo className="text-partner-bronze w-6 h-6" />
         </div>
         <div>
           <h2 className="text-xl font-bold text-white uppercase tracking-wider">GSD (Get Shit Done)</h2>
@@ -51,14 +51,14 @@ export default function GSDTool() {
             value={task}
             onChange={(e) => setTask(e.target.value)}
             placeholder="What do you want to achieve?"
-            className="w-full bg-nexus-dark-slate/40 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-nexus-bronze/50 transition-all"
+            className="w-full bg-partner-dark-slate/40 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-partner-bronze/50 transition-all"
             onKeyPress={(e) => e.key === "Enter" && handleBreakTask()}
           />
         </div>
         <button
           onClick={handleBreakTask}
           disabled={loading}
-          className="bg-nexus-bronze text-nexus-dark-slate px-6 py-3 rounded-xl font-bold hover:brightness-110 transition-all disabled:opacity-50 flex items-center gap-2"
+          className="bg-partner-bronze text-partner-dark-slate px-6 py-3 rounded-xl font-bold hover:brightness-110 transition-all disabled:opacity-50 flex items-center gap-2"
         >
           {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Send className="w-5 h-5" />}
           <span>Break</span>
@@ -67,7 +67,7 @@ export default function GSDTool() {
 
       <div className="flex-grow overflow-y-auto space-y-3 custom-scrollbar pr-2">
         <div className="flex justify-between items-center mb-4">
-          <h3 className="text-nexus-bronze font-bold uppercase tracking-widest text-xs">Atomic Steps</h3>
+          <h3 className="text-partner-bronze font-bold uppercase tracking-widest text-xs">Atomic Steps</h3>
           {steps.length > 0 && (
             <button
               onClick={handleCopy}
@@ -88,11 +88,11 @@ export default function GSDTool() {
                 transition={{ delay: idx * 0.1 }}
                 className="flex items-center gap-4 bg-white/5 border border-white/5 p-4 rounded-xl hover:bg-white/10 transition-all group"
               >
-                <div className="h-6 w-6 rounded-full border-2 border-nexus-bronze/50 flex items-center justify-center flex-shrink-0 group-hover:border-nexus-bronze transition-colors">
-                  <span className="text-xs font-bold text-nexus-bronze">{idx + 1}</span>
+                <div className="h-6 w-6 rounded-full border-2 border-partner-bronze/50 flex items-center justify-center flex-shrink-0 group-hover:border-partner-bronze transition-colors">
+                  <span className="text-xs font-bold text-partner-bronze">{idx + 1}</span>
                 </div>
                 <p className="text-gray-200 text-sm leading-relaxed">{step}</p>
-                <CheckCircle2 className="w-5 h-5 text-gray-600 ml-auto group-hover:text-nexus-bronze/50 transition-colors" />
+                <CheckCircle2 className="w-5 h-5 text-gray-600 ml-auto group-hover:text-partner-bronze/50 transition-colors" />
               </motion.div>
             ))
           ) : !loading && (

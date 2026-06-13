@@ -84,10 +84,10 @@ const SyllabusEditor = ({ initialData, onSave, isSaving }) => {
   return (
     <div className="space-y-8 pb-32 pb-40">
       <div className="flex justify-between items-center mb-6">
-        <p className="text-sm text-nexus-slate italic">Edit your pod syllabus hierarchy below.</p>
+        <p className="text-sm text-partner-slate italic">Edit your pod syllabus hierarchy below.</p>
         <button 
           onClick={addChapter}
-          className="flex items-center space-x-2 px-4 py-2 bg-nexus-blue/20 border border-nexus-blue/30 rounded-xl text-nexus-bronze hover:bg-nexus-blue/30 transition-all text-sm font-bold"
+          className="flex items-center space-x-2 px-4 py-2 bg-partner-blue/20 border border-partner-blue/30 rounded-xl text-partner-bronze hover:bg-partner-blue/30 transition-all text-sm font-bold"
         >
           <Plus size={16} />
           <span>Add Chapter</span>
@@ -96,36 +96,36 @@ const SyllabusEditor = ({ initialData, onSave, isSaving }) => {
 
       <div className="space-y-10">
         {data.chapters.map((chapter, chIdx) => (
-          <div key={chapter.id} className="p-6 bg-nexus-blue/5 border border-nexus-slate/10 rounded-2xl space-y-4 relative group">
+          <div key={chapter.id} className="p-6 bg-partner-blue/5 border border-partner-slate/10 rounded-2xl space-y-4 relative group">
             <div className="flex items-center space-x-4">
-              <span className="text-nexus-bronze font-bold min-w-[3rem]">CH {chIdx + 1}</span>
+              <span className="text-partner-bronze font-bold min-w-[3rem]">CH {chIdx + 1}</span>
               <input 
                 value={chapter.name}
                 onChange={(e) => updateChapter(chIdx, e.target.value)}
-                className="flex-grow bg-nexus-blue/10 border border-nexus-slate/20 rounded-xl px-4 py-2 text-nexus-porcelain focus:border-nexus-bronze/50 focus:outline-none transition-all font-semibold"
+                className="flex-grow bg-partner-blue/10 border border-partner-slate/20 rounded-xl px-4 py-2 text-partner-porcelain focus:border-partner-bronze/50 focus:outline-none transition-all font-semibold"
                 placeholder="Chapter Name"
               />
               <button 
                 onClick={() => removeChapter(chIdx)}
-                className="p-2 text-nexus-slate hover:text-red-400 opacity-0 group-hover:opacity-100 transition-all"
+                className="p-2 text-partner-slate hover:text-red-400 opacity-0 group-hover:opacity-100 transition-all"
               >
                 <Trash2 size={18} />
               </button>
             </div>
 
-            <div className="ml-8 space-y-6 border-l-2 border-nexus-slate/10 pl-6">
+            <div className="ml-8 space-y-6 border-l-2 border-partner-slate/10 pl-6">
               {chapter.topics.map((topic, tIdx) => (
                 <div key={topic.id} className="space-y-3 relative group/topic">
                   <div className="flex items-center space-x-3">
                     <input 
                       value={topic.name}
                       onChange={(e) => updateTopic(chIdx, tIdx, e.target.value)}
-                      className="flex-grow bg-nexus-blue/10 border border-nexus-slate/20 rounded-xl px-4 py-2 text-sm text-nexus-porcelain focus:border-nexus-bronze/50 focus:outline-none transition-all placeholder:text-nexus-slate/30"
+                      className="flex-grow bg-partner-blue/10 border border-partner-slate/20 rounded-xl px-4 py-2 text-sm text-partner-porcelain focus:border-partner-bronze/50 focus:outline-none transition-all placeholder:text-partner-slate/30"
                       placeholder="Topic Name"
                     />
                     <button 
                       onClick={() => removeTopic(chIdx, tIdx)}
-                      className="p-1.5 text-nexus-slate/50 hover:text-red-400 opacity-0 group-hover/topic:opacity-100 transition-all"
+                      className="p-1.5 text-partner-slate/50 hover:text-red-400 opacity-0 group-hover/topic:opacity-100 transition-all"
                     >
                       <Trash2 size={16} />
                     </button>
@@ -134,16 +134,16 @@ const SyllabusEditor = ({ initialData, onSave, isSaving }) => {
                   <div className="ml-4 space-y-2">
                     {topic.subtopics.map((sub, sIdx) => (
                       <div key={sub.id} className="flex items-center space-x-2 group/sub">
-                        <div className="w-2 h-2 rounded-full bg-nexus-bronze/30 flex-shrink-0" />
+                        <div className="w-2 h-2 rounded-full bg-partner-bronze/30 flex-shrink-0" />
                         <input 
                           value={sub.name}
                           onChange={(e) => updateSubtopic(chIdx, tIdx, sIdx, e.target.value)}
-                          className="flex-grow bg-transparent border-b border-nexus-slate/20 px-2 py-1 text-xs text-nexus-slate focus:border-nexus-bronze/50 focus:outline-none transition-all placeholder:text-nexus-slate/30"
+                          className="flex-grow bg-transparent border-b border-partner-slate/20 px-2 py-1 text-xs text-partner-slate focus:border-partner-bronze/50 focus:outline-none transition-all placeholder:text-partner-slate/30"
                           placeholder="Subtopic Name"
                         />
                         <button 
                           onClick={() => removeSubtopic(chIdx, tIdx, sIdx)}
-                          className="p-1 text-nexus-slate/30 hover:text-red-400 opacity-0 group-hover/sub:opacity-100 transition-all"
+                          className="p-1 text-partner-slate/30 hover:text-red-400 opacity-0 group-hover/sub:opacity-100 transition-all"
                         >
                           <Trash2 size={14} />
                         </button>
@@ -151,7 +151,7 @@ const SyllabusEditor = ({ initialData, onSave, isSaving }) => {
                     ))}
                     <button 
                       onClick={() => addSubtopic(chIdx, tIdx)}
-                      className="text-[10px] font-bold text-nexus-slate/60 hover:text-nexus-bronze flex items-center space-x-1 transition-all ml-4"
+                      className="text-[10px] font-bold text-partner-slate/60 hover:text-partner-bronze flex items-center space-x-1 transition-all ml-4"
                     >
                       <Plus size={10} />
                       <span>Add Subtopic</span>
@@ -161,7 +161,7 @@ const SyllabusEditor = ({ initialData, onSave, isSaving }) => {
               ))}
               <button 
                 onClick={() => addTopic(chIdx)}
-                className="text-xs font-bold text-nexus-bronze/60 hover:text-nexus-bronze flex items-center space-x-1 transition-all"
+                className="text-xs font-bold text-partner-bronze/60 hover:text-partner-bronze flex items-center space-x-1 transition-all"
               >
                 <Plus size={12} />
                 <span>Add Topic</span>
@@ -172,16 +172,16 @@ const SyllabusEditor = ({ initialData, onSave, isSaving }) => {
       </div>
 
       {/* Floating Save Action */}
-      <div className="fixed bottom-0 right-0 w-full md:w-1/2 p-6 bg-gradient-to-t from-[#1e293b] via-[#1e293b] to-transparent z-10 border-l border-nexus-slate/20">
+      <div className="fixed bottom-0 right-0 w-full md:w-1/2 p-6 bg-gradient-to-t from-[#1e293b] via-[#1e293b] to-transparent z-10 border-l border-partner-slate/20">
         <button 
           onClick={() => onSave(data)}
           disabled={isSaving}
-          className={`w-full py-4 rounded-2xl bg-nexus-bronze text-[#1e293b] font-bold flex items-center justify-center space-x-3 shadow-lg shadow-nexus-bronze/20 hover:scale-[1.02] active:scale-[0.98] transition-all
+          className={`w-full py-4 rounded-2xl bg-partner-bronze text-[#1e293b] font-bold flex items-center justify-center space-x-3 shadow-lg shadow-partner-bronze/20 hover:scale-[1.02] active:scale-[0.98] transition-all
             ${isSaving ? 'opacity-70 cursor-not-allowed' : ''}
           `}
         >
           {isSaving ? (
-            <div className="w-5 h-5 border-2 border-nexus-dark-slate border-t-transparent rounded-full animate-spin" />
+            <div className="w-5 h-5 border-2 border-partner-dark-slate border-t-transparent rounded-full animate-spin" />
           ) : (
             <Save size={20} />
           )}

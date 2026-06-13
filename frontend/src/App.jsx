@@ -24,8 +24,8 @@ import './animations.css';
 const Layout = ({ children }) => (
   <div className="flex flex-col min-h-screen relative overflow-x-hidden">
     {/* Global Background */}
-    <div className="fixed inset-0 bg-nexus-dark-slate -z-20"></div>
-    <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-nexus-blue/20 via-nexus-dark-slate to-[#0f172a] -z-10"></div>
+    <div className="fixed inset-0 bg-partner-dark-slate -z-20"></div>
+    <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-partner-blue/20 via-partner-dark-slate to-[#0f172a] -z-10"></div>
 
     <Header />
     <main className="flex-grow pt-16">

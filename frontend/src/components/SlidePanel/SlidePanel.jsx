@@ -42,21 +42,21 @@ const SlidePanel = ({ isOpen, onClose, title, children }) => {
       {/* Panel */}
       <div 
         onTransitionEnd={handleAnimationEnd}
-        className={`relative w-full md:w-1/2 h-full bg-[#1e293b] border-l border-nexus-slate/20 shadow-2xl transition-transform duration-500 ease-out flex flex-col ${isVisible ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`relative w-full md:w-1/2 h-full bg-[#1e293b] border-l border-partner-slate/20 shadow-2xl transition-transform duration-500 ease-out flex flex-col ${isVisible ? 'translate-x-0' : 'translate-x-full'}`}
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-nexus-slate/20 bg-nexus-blue/5">
-          <h2 className="text-xl font-bold text-nexus-porcelain tracking-tight">{title}</h2>
+        <div className="flex items-center justify-between p-6 border-b border-partner-slate/20 bg-partner-blue/5">
+          <h2 className="text-xl font-bold text-partner-porcelain tracking-tight">{title}</h2>
           <button 
             onClick={onClose}
-            className="p-2 rounded-xl text-nexus-slate hover:text-nexus-porcelain hover:bg-nexus-blue/20 transition-all"
+            className="p-2 rounded-xl text-partner-slate hover:text-partner-porcelain hover:bg-partner-blue/20 transition-all"
           >
             <X size={24} />
           </button>
         </div>
 
         {/* Content */}
-        <div className="flex-grow overflow-y-auto p-6 scrollbar-thin scrollbar-thumb-nexus-slate/20 scrollbar-track-transparent">
+        <div className="flex-grow overflow-y-auto p-6 scrollbar-thin scrollbar-thumb-partner-slate/20 scrollbar-track-transparent">
           {children}
         </div>
       </div>

@@ -863,7 +863,7 @@ def cancel_class(schedule_id: str, db: Session = Depends(get_db)):
 def get_db_backup(db: Session = Depends(get_db)):
     # Look for SQLite databases in current directory
     db_file = None
-    for name in ["partner.db", "nexus.db", "database.db"]:
+    for name in ["partner.db", "partner.db", "database.db"]:
         if os.path.exists(name):
             db_file = name
             break
