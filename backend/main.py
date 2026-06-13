@@ -348,7 +348,12 @@ app.add_middleware(
 
 @app.get("/")
 def home():
-    return {"message": "Welcome to the Nexus API!"}
+    frontend_dist_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "frontend", "dist")
+    index_file = os.path.join(frontend_dist_path, "index.html")
+    if os.path.exists(index_file):
+        from fastapi.responses import FileResponse
+        return FileResponse(index_file)
+    return {"message": "Welcome to the Partner API!"}
 
 @app.post("/api/pods", response_model=PodResponse)
 def create_pod(pod: PodCreate, db: Session = Depends(get_db)):
