@@ -26,4 +26,6 @@ pyjwt
 passlib
 bcrypt>=4.0.1
 psycopg2-binary>=2.9.0
+anthropic
+google-auth
 
